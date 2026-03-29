@@ -162,6 +162,14 @@ Montar o PIM
 
 ---
 
+
+# 🏁 Entrega Oficial
+
+📅 **23/05/2026 (Sábado)** — Postagem do PIM pelos alunos
+
+
+---
+
 # 🔁 Rotina da Equipe
 
 ## 📅 Reunião Semanal
