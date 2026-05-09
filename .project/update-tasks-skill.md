@@ -116,6 +116,19 @@ Esta skill funciona em conjunto com [git_skill.md](./git_skill.md):
 
 Use `git_skill.md` como referência ao fazer commits com TASK IDs.
 
+### Automação do Agente
+
+Quando o agente processa `@file:git_skill.md`, a skill **update-tasks** deve ser invocada automaticamente para:
+
+1. **Analisar commits recentes** (últimos 10 por padrão)
+2. **Extrair referências TASK-###** de mensagens de commit
+3. **Mapear arquivos modificados** para tasks (conforme tabela de mapeamento)
+4. **Atualizar checkboxes** em `docs/tasks/TASKS.md` de `[ ]` para `[x]`
+5. **Validar markdown** para evitar corrupção
+6. **Auto-commitar** as mudanças com mensagem `docs(tasks): sincroniza TASKS.md`
+
+**Não é necessário invocar manualmente `/update-tasks` — o agente deve fazer automaticamente após processar git_skill.md.**
+
 ---
 
 ## Exemplos de Workflow Completo

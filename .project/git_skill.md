@@ -214,5 +214,36 @@ Mas prefira sempre o formato `tipo(escopo): descrição` para maior clareza.
 
 ---
 
-**Última atualização:** 07/05/2026  
+## Integração com Update Tasks Skill
+
+**Importante**: Após fazer commits seguindo este padrão, a skill **update-tasks** deve ser executada automaticamente para manter `docs/tasks/TASKS.md` sincronizado com o progresso real do projeto.
+
+### Workflow Completo
+
+1. **Fazer commits** com padrão `tipo(escopo): TASK-### - descrição`
+2. **Invocar automaticamente** a skill update-tasks:
+   ```
+   /update-tasks
+   ```
+3. **Resultado**: Checkboxes em TASKS.md são atualizados de `[ ]` para `[x]`
+
+### Exemplo
+
+```bash
+# 1. Fazer commit
+git commit -m "frontend: TASK-010 - implementa estrutura responsiva"
+
+# 2. Agente executa automaticamente
+/update-tasks
+
+# 3. TASKS.md atualizado
+# ANTES: - [ ] TASK-010: Estrutura Base HTML/CSS Responsiva
+# DEPOIS: - [x] TASK-010: Estrutura Base HTML/CSS Responsiva
+```
+
+Consulte [update-tasks-skill.md](./update-tasks-skill.md) para detalhes completos da skill.
+
+---
+
+**Última atualização:** 08/05/2026  
 **Responsável:** Tech Lead
