@@ -1,9 +1,5 @@
 # 📋 TAREFAS PIM III — Planejamento Completo
 
-**Data de Entrega:** 23/05/2026  
-**Data Atual:** 07/05/2026  
-**Dias Restantes:** 16 dias
-
 ---
 
 ## 🔍 ÍNDICE POR SEGMENTO
@@ -18,43 +14,32 @@
 
 ### 🎨 **Design & UX/UI** (Experiência do Usuário)
 - [TASK-005](#task-005-personas-e-pesquisa-de-usuários) — Personas e Pesquisa
-- [TASK-006](#task-006-fluxo-de-navegação-e-wireframes) — Fluxos e Wireframes
-- [TASK-007](#task-007-design-system-completo) — Design System
-- [TASK-008](#task-008-protótipos-de-alta-fidelidade) — Protótipos
-- [TASK-009](#task-009-testes-de-usabilidade-opcional--p2) — Testes de Usabilidade
+- [TASK-006](#task-006-design-system--protótipos-html-mvp) — Design System + Protótipos HTML
 
 ### 💻 **Frontend** (Interface Web)
-- [TASK-010](#task-010-estrutura-base-htmlcss-responsiva) — Estrutura Base HTML/CSS
-- [TASK-011](#task-011-implementar-página-de-cadastro-signup) — Página de Cadastro
-- [TASK-012](#task-012-modal-de-criar-editar-gasto) — Modal Criar/Editar Gasto
-- [TASK-013](#task-013-página-de-categorias-crud) — Página de Categorias
-- [TASK-014](#task-014-página-de-alertas) — Página de Alertas
-- [TASK-015](#task-015-página-de-ia-simulada-insights) — Página de Insights (IA)
-- [TASK-016](#task-016-integração-com-backend-api) — Integração com Backend/API
-- [TASK-017](#task-017-acessibilidade-wcag-aa) — Acessibilidade
-- [TASK-018](#task-018-testes-responsivos-e-cross-browser) — Testes Responsivos
+- [TASK-007](#task-007-modal-criareditar-gasto--tela-categorias) — Modal + Categorias
+- [TASK-008](#task-008-features-adicionais-alertas-insights-relatórios) — Features Adicionais
+- [TASK-009](#task-009-integração-com-backend-api--javascript) — Integração API
 
 ### ⚙️ **Backend** (API & Servidor)
-- [TASK-019](#task-019-estrutura-base-c-net) — Estrutura Base C# (.NET)
-- [TASK-020](#task-020-api-endpoints-crud) — API Endpoints CRUD
-- [TASK-021](#task-021-validação-e-regras-de-negócio) — Validação e Regras de Negócio
-- [TASK-022](#task-022-relatórios-e-kpis) — Relatórios e KPIs
-- [TASK-023](#task-023-testes-unitários-backend) — Testes Unitários Backend
-- [TASK-024](#task-024-implementar-ia-simulada-backend) — "IA Simulada" (Backend)
-- [TASK-025](#task-025-relatórios-avançados-opcional) — Relatórios Avançados
+- [TASK-010](#task-010-estrutura-base-net--autenticação-jwt) — Estrutura Base .NET
+- [TASK-011](#task-011-api-crud-mvp-gastos-categorias) — API CRUD MVP
+- [TASK-012](#task-012-relatórios-e-alertas-backend) — Relatórios e Alertas
+- [TASK-013](#task-013-testes-unitários--qa) — Testes Unitários
 
-### ♿ **Qualidade & Acessibilidade** (Inclusão & Testes)
-- [TASK-026](#task-026-acessibilidade-e-libras) — Acessibilidade e LIBRAS
-
-### 📚 **Documentação & Comunicação**
-- [TASK-027](#task-027-documentação-e-comunicação) — Documentação Técnica
-- [TASK-031](#task-031-montar-documentação-pim-abnt) — Documentação PIM (ABNT)
-- [TASK-032](#task-032-preparação-para-apresentação) — Preparação para Apresentação
+### ♿ **Qualidade & Acessibilidade** (Testes)
+- [TASK-014](#task-014-acessibilidade-wcag-aa) — Acessibilidade
+- [TASK-015](#task-015-testes-responsivos-e-cross-browser) — Testes Responsivos
 
 ### 🚀 **Integração & Deploy** (Finalização)
-- [TASK-028](#task-028-integração-frontend--backend) — Integração E2E
-- [TASK-029](#task-029-testes-de-aceitação-e-qa) — Testes de Aceitação e QA
-- [TASK-030](#task-030-deploy-e-configuração-de-produção) — Deploy
+- [TASK-016](#task-016-integração-frontend--backend-e2e) — Integração E2E
+- [TASK-017](#task-017-testes-de-aceitação--relatório-qa) — Testes QA
+
+### 📚 **Documentação** (Entrega Final)
+- [TASK-018](#task-018-documentação-de-api--readme) — Documentação de API
+- [TASK-019](#task-019-documentação-pim-abnt) — Documentação PIM (ABNT)
+- [TASK-020](#task-020-preparação-para-apresentação) — Preparação para Apresentação
+- [TASK-021](#task-021-deploy-e-configuração-de-produção) — Deploy (Opcional)
 
 ---
 
@@ -96,647 +81,446 @@
 
 ---
 
-## 🟡 FASE 4 — UX/UI e Protótipos [🔴 EM ANDAMENTO]
+## 🟡 FASE 4 — UX/UI e Design [🟡 EM ANDAMENTO]
 
 ### TASK-005: Personas e Pesquisa de Usuários
-**Status:** ⏳ Não iniciado  
+**Status:** ✅ Concluído  
 **Prioridade:** P0  
 **Assignee:** UX/UI Designer
 
 #### Subtasks:
-- [ ] TASK-005.1: Criar 3 personas principais
-  - [ ] Persona 1: João (Jovem profissional, organizado)
-  - [ ] Persona 2: Maria (Autônoma, gerencia múltiplas fontes)
-  - [ ] Persona 3: Pedro (Aposentado, controle básico)
-  - [ ] Documento com dados demográficos, motivações, dores, goals
-  
-- [ ] TASK-005.2: Mapa de empatia para cada persona
-- [ ] TASK-005.3: Jobs to be done (JTBD)
-- [ ] TASK-005.4: User journey mapping
+- [x] TASK-005.1: Criar 3 personas principais
+- [x] TASK-005.2: Mapa de empatia
+- [x] TASK-005.3: Jobs to be done (JTBD)
+- [x] TASK-005.4: User journey mapping
 
-**Entrada:** Requisitos do ROADMAP  
-**Saída:** `docs/personas.md`
+**Saída:** `docs/personas.md` ✅
 
 ---
 
-### TASK-006: Fluxo de Navegação e Wireframes
-**Status:** ⏳ Não iniciado  
+### TASK-006: Design System + Protótipos HTML (MVP)
+**Status:** ✅ Concluído  
 **Prioridade:** P0  
-**Assignee:** UX/UI Designer
+**Assignee:** UX/UI Designer + Frontend Developer
 
 #### Subtasks:
-- [ ] TASK-006.1: Fluxo de navegação (User flows)
-  - [ ] Fluxo de autenticação (login → cadastro → dashboard)
-  - [ ] Fluxo de criar gasto (dashboard → modal → salvar)
-  - [ ] Fluxo de editar gasto (tabela → modal → atualizar)
-  - [ ] Fluxo de visualizar relatórios (período → gráficos → exportar)
-  - [ ] Fluxo de definir orçamento (categorias → valores → alertas)
+- [x] TASK-006.1: Design System Essencial
+  - [x] Paleta de cores (primária, secundária, status, neutra)
+  - [x] Tipografia (DM Serif Display + DM Sans)
+  - [x] Componentes base: Button, Input, Card, Modal, Toast
+  - [x] Grid 12 colunas + spacing system
+  - [x] Breakpoints: 375px (mobile), 768px (tablet), 1024px (desktop)
+  - [x] Arquivo: `docs/design-system.md` ✅
 
-- [ ] TASK-006.2: Wireframes baixa fidelidade
-  - [ ] Wireframe: Tela de Login
-  - [ ] Wireframe: Tela de Cadastro
-  - [ ] Wireframe: Dashboard (desktop, tablet, mobile)
-  - [ ] Wireframe: Gastos (lista + formulário)
-  - [ ] Wireframe: Categorias (CRUD)
-  - [ ] Wireframe: Relatórios
-  - [ ] Wireframe: Alertas
-  - [ ] Wireframe: Modal de criar/editar gasto
-
-- [ ] TASK-006.3: Diagrama de arquitetura de informação (IA)
-  - [ ] Estrutura de navegação hierárquica
-  - [ ] Mapa do site
+- [x] TASK-006.2: Protótipos HTML (4 telas MVP)
+  - [x] Tela Login (HTML + CSS, responsive) ✅
+  - [x] Tela Cadastro (HTML + CSS, responsive) ✅
+  - [x] Tela Dashboard (HTML + CSS, responsive, sem API) ✅
+  - [x] Tela Gastos (HTML + CSS, responsive, sem API) ✅
+  - [x] CSS semântico com variáveis do design system ✅
+  - [x] Mobile-first: 375px, 768px, 1024px ✅
 
 **Entrada:** Personas (TASK-005)  
-**Saída:** `docs/fluxos-navegacao.md`, wireframes em imagem
-
----
-
-### TASK-007: Design System Completo
-**Status:** ⏳ Não iniciado  
-**Prioridade:** P0  
-**Assignee:** UX/UI Designer
-
-#### Subtasks:
-- [ ] TASK-007.1: Definição de Cores
-  - [ ] Paleta primária (Verde): #27500A, #3B6D11, #639922, #97C459, #C0DD97, #EAF3DE
-  - [ ] Paleta secundária (Teal): #0F6E56, #1D9E75, #9FE1CB, #E1F5EE
-  - [ ] Paleta de status (Amber, Red): códigos exatos
-  - [ ] Paleta neutra (Gray): tons de cinza
-  - [ ] Acessibilidade: verificação de contraste (WCAG AA)
-  - [ ] Documento com uso de cada cor
-
-- [ ] TASK-007.2: Tipografia
-  - [ ] Font primária: DM Serif Display (headers)
-  - [ ] Font secundária: DM Sans (body)
-  - [ ] Escala de tamanhos: 10px, 12px, 13px, 14px, 15px, 1.6rem, 1.8rem, 2rem, 2.8rem
-  - [ ] Pesos: 300 (light), 400 (regular), 500 (medium), 600 (semibold)
-  - [ ] Line heights e letter spacing
-  - [ ] Documento com aplicação em cada contexto
-
-- [ ] TASK-007.3: Componentes Reutilizáveis
-  - [ ] Button (primary, secondary, ghost, danger)
-  - [ ] Input (text, email, number, select, textarea)
-  - [ ] Badge (category, status)
-  - [ ] Card (metric, chart, info)
-  - [ ] Table (header, row, pagination)
-  - [ ] Modal (form, confirmation)
-  - [ ] Toast/Alert (success, warning, error, info)
-  - [ ] Progress bar
-  - [ ] Toggle switch
-  - [ ] Breadcrumb
-  - [ ] Dropdown/Menu
-  - [ ] Tab bar
-
-- [ ] TASK-007.4: Espaçamento e Grid
-  - [ ] Sistema de spacing: 4px, 6px, 8px, 10px, 12px, 14px, 16px, 20px...
-  - [ ] Grid: 12 colunas
-  - [ ] Breakpoints responsivos: mobile (375px), tablet (768px), desktop (1024px)
-  - [ ] Padding/margin padrões
-
-- [ ] TASK-007.5: Ícones e Símbolos
-  - [ ] Conjunto de 20+ ícones SVG customizados
-  - [ ] Nomes padronizados
-  - [ ] Tamanhos: 14px, 16px, 18px, 20px, 24px
-
-- [ ] TASK-007.6: Documentação do Design System
-  - [ ] Arquivo MD com guia completo
-  - [ ] Exemplos de uso
-  - [ ] Regras de acessibilidade
-
-**Entrada:** RNF2 (Design System)  
-**Saída:** `docs/design-system.md`, arquivo Figma compartilhado
-
----
-
-### TASK-008: Protótipos de Alta Fidelidade
-**Status:** ⏳ Não iniciado  
-**Prioridade:** P0  
-**Assignee:** UX/UI Designer
-
-#### Subtasks:
-- [ ] TASK-008.1: Protótipo em Figma (telas principais)
-  - [ ] Tela Login (desktop, mobile)
-  - [ ] Tela Cadastro (desktop, mobile)
-  - [ ] Tela Dashboard (desktop, tablet, mobile)
-  - [ ] Tela Gastos (desktop, mobile)
-  - [ ] Tela Categorias (desktop, mobile)
-  - [ ] Tela Relatórios (desktop, mobile)
-  - [ ] Modal: Criar/editar gasto
-  - [ ] Modal: Criar orçamento
-  - [ ] Modal: Confirmação de exclusão
-
-- [ ] TASK-008.2: Interações e animações
-  - [ ] Hover states em botões
-  - [ ] Focus states (acessibilidade)
-  - [ ] Transições suaves (0.15s-0.3s)
-  - [ ] Loading states
-  - [ ] Erro states
-
-- [ ] TASK-008.3: Mockups responsivos
-  - [ ] Mobile: 375px (iPhone SE)
-  - [ ] Tablet: 768px (iPad)
-  - [ ] Desktop: 1024px+ (laptop)
-  - [ ] Teste de legibilidade em cada breakpoint
-
-- [ ] TASK-008.4: Guia de Padrões de Interação
-  - [ ] Como abrir/fechar modais
-  - [ ] Validação de formulário
-  - [ ] Estados de loading/erro
-  - [ ] Feedback visual (toasts)
-
-**Entrada:** Design System (TASK-007)  
-**Saída:** Arquivo Figma com protótipos interativos
-
----
-
-### TASK-009: Testes de Usabilidade (Opcional — P2)
-**Status:** ⏳ Não iniciado  
-**Prioridade:** P2  
-**Assignee:** UX/UI + QA
-
-#### Subtasks:
-- [ ] TASK-009.1: Preparação de teste
-  - [ ] Criação de roteiros (scripts)
-  - [ ] Seleção de 5 usuários-teste
-  - [ ] Preparação de ambiente (Figma protótipo)
-
-- [ ] TASK-009.2: Execução de testes
-  - [ ] Observação de usuários usando protótipo
-  - [ ] Registro de feedback
-  - [ ] Identificação de pain points
-
-- [ ] TASK-009.3: Análise e iteração
-  - [ ] Compilação de insights
-  - [ ] Recomendações de melhorias
-  - [ ] Ajustes no protótipo
-
-**Entrada:** Protótipos (TASK-008)  
-**Saída:** Relatório de usabilidade, protótipo revisado
+**Saída:** `docs/design-system.md` + 4 telas HTML/CSS responsivas (protótipos estáticos) ✅
 
 ---
 
 ## 🔴 FASE 5 — Desenvolvimento Frontend [🔴 EM ANDAMENTO]
 
-### TASK-010: Estrutura Base HTML/CSS Responsiva
-**Status:** ⏳ Parcialmente concluído (4 telas existem)  
-**Prioridade:** P0  
-**Assignee:** Frontend Developer
-
-#### Subtasks:
-- [ ] TASK-010.1: Refactor HTML semântico
-  - [ ] Revisão de estrutura das 4 telas existentes
-  - [ ] Adicionar atributos `data-*` para JS
-  - [ ] Organização de seções semânticas
-
-- [ ] TASK-010.2: Responsividade mobile-first
-  - [ ] Media queries para 375px, 768px, 1024px
-  - [ ] Sidebar colapsável em mobile
-  - [ ] Grid adaptativo
-  - [ ] Testes em navegadores (Chrome, Firefox, Safari)
-  - [ ] Teste em dispositivos reais
-
-- [ ] TASK-010.3: CSS refatorado
-  - [ ] Variáveis CSS padronizadas
-  - [ ] Organização em seções (layout, cards, forms, etc)
-  - [ ] Minificação
-  - [ ] Performance (< 50KB)
-
-- [ ] TASK-010.4: Implementar Design System
-  - [ ] Componentes reutilizáveis em CSS
-  - [ ] Consistência de cores/tipografia
-  - [ ] Spacing padronizado
-
-**Entrada:** Design System (TASK-007)  
-**Saída:** Arquivo CSS refatorado, 4 telas responsivas
-
----
-
-### TASK-011: Implementar Página de Cadastro (Signup)
+### TASK-007: Modal Criar/Editar Gasto + Tela Categorias
 **Status:** ⏳ Não iniciado  
 **Prioridade:** P0  
 **Assignee:** Frontend Developer
 
 #### Subtasks:
-- [ ] TASK-011.1: HTML/CSS tela cadastro
-  - [ ] Form com campos: nome, email, senha, confirmação senha
-  - [ ] Validação visual
-  - [ ] Link para login
+- [ ] TASK-007.1: Modal criar/editar gasto
+  - [ ] Form: valor, descrição, categoria, data
+  - [ ] Validação visual (CSS)
+  - [ ] Abrir/fechar (button click, escape key)
+  - [ ] Accessibility: focus management, aria-labels
 
-- [ ] TASK-011.2: JavaScript validação
-  - [ ] Validação client-side
-  - [ ] Feedback visual
-  - [ ] Requisição ao backend (POST /auth/register)
-
-- [ ] TASK-011.3: Responsividade
-  - [ ] Mobile-first
-  - [ ] Testes em 3+ resoluções
-
-**Entrada:** Design System (TASK-007)  
-**Saída:** `frontend/tela-cadastro.html`
-
----
-
-### TASK-012: Modal de Criar/Editar Gasto
-**Status:** ⏳ Não iniciado  
-**Prioridade:** P0  
-**Assignee:** Frontend Developer
-
-#### Subtasks:
-- [ ] TASK-012.1: HTML/CSS do modal
-  - [ ] Form: valor, descrição, categoria, data, recorrência
-  - [ ] Botões: salvar, cancelar
-  - [ ] Validação visual de erros
-  - [ ] Accessibility (focus, escape key)
-
-- [ ] TASK-012.2: JavaScript interação
-  - [ ] Abrir/fechar modal (botão, escape)
-  - [ ] Reset de formulário ao abrir
-  - [ ] Validação antes de enviar
-  - [ ] Requisição ao backend (POST/PUT /expenses)
-
-- [ ] TASK-012.3: Casos de uso
-  - [ ] Criar novo gasto
-  - [ ] Editar gasto existente
-  - [ ] Pré-popular dados ao editar
-
-**Entrada:** Design System (TASK-007)  
-**Saída:** Modal integrado em `tela-gastos.html`
-
----
-
-### TASK-013: Página de Categorias (CRUD)
-**Status:** ⏳ Não iniciado  
-**Prioridade:** P1  
-**Assignee:** Frontend Developer
-
-#### Subtasks:
-- [ ] TASK-013.1: HTML/CSS tela categorias
+- [ ] TASK-007.2: Tela Categorias (CRUD visual)
   - [ ] Lista de categorias com cards
-  - [ ] Cada card: nome, cor, ícone, ações (editar, deletar)
   - [ ] Botão "Nova categoria"
+  - [ ] Modal criar/editar categoria
+  - [ ] Botões delete com confirmação modal
+  - [ ] Responsivo
 
-- [ ] TASK-013.2: Modal criar/editar categoria
-  - [ ] Form: nome, descrição, cor (color picker), ícone
-  - [ ] Validação
-
-- [ ] TASK-013.3: JavaScript CRUD
-  - [ ] GET /categories (listar)
-  - [ ] POST /categories (criar)
-  - [ ] PUT /categories/:id (editar)
-  - [ ] DELETE /categories/:id (deletar)
-  - [ ] Confirmação antes de deletar
-
-- [ ] TASK-013.4: Responsividade
-  - [ ] Grid responsivo de cards
-
-**Entrada:** Design System (TASK-007)  
-**Saída:** `frontend/tela-categorias.html`
+**Entrada:** TASK-006  
+**Saída:** Modal integrado em tela-gastos.html + tela-categorias.html funcional (sem API)
 
 ---
 
-### TASK-014: Página de Alertas
+### TASK-008: Features Adicionais (Alertas, Insights, Relatórios)
 **Status:** ⏳ Não iniciado  
 **Prioridade:** P1  
 **Assignee:** Frontend Developer
 
 #### Subtasks:
-- [ ] TASK-014.1: HTML/CSS tela alertas
-  - [ ] Lista de alertas ordenada por data
-  - [ ] Tipos: "orçamento_excedido", "gasto_alto", "categoria_limite"
-  - [ ] Status: lido/não lido
-  - [ ] Botão marcar como lido
-  - [ ] Deletar alerta
+- [ ] TASK-008.1: Tela Alertas
+  - [ ] Lista de alertas com cards
+  - [ ] Tipos visuais: orçamento_excedido, gasto_alto, categoria_limite
+  - [ ] Botões: marcar como lido, deletar
+  - [ ] Responsivo
 
-- [ ] TASK-014.2: JavaScript
-  - [ ] GET /alerts (listar)
-  - [ ] PUT /alerts/:id (marcar como lido)
-  - [ ] DELETE /alerts/:id (deletar)
-  - [ ] Atualização em tempo real (WebSocket opcional)
+- [ ] TASK-008.2: Tela Insights (IA Simulada)
+  - [ ] Cards com recomendações de economia (mockadas)
+  - [ ] Visualização por período (seletor)
+  - [ ] Responsive
 
-- [ ] TASK-014.3: Ícones e cores por tipo
-  - [ ] Cores conforme design system
+- [ ] TASK-008.3: Tela Relatórios
+  - [ ] Cards de KPIs (total, saldo, maior gasto) com números mockados
+  - [ ] Espaço para gráficos (Chart.js later)
+  - [ ] Filtro por período
+  - [ ] Responsive
 
-**Entrada:** Design System (TASK-007)  
-**Saída:** `frontend/tela-alertas.html`
-
----
-
-### TASK-015: Página de "IA Simulada" (Insights)
-**Status:** ⏳ Não iniciado  
-**Prioridade:** P2  
-**Assignee:** Frontend Developer
-
-#### Subtasks:
-- [ ] TASK-015.1: HTML/CSS tela insights
-  - [ ] Cards com insights de IA (recomendações)
-  - [ ] Tipos: "gastos_aumentaram", "melhor_economia", "categoria_risco"
-  - [ ] Visualização por período
-
-- [ ] TASK-015.2: JavaScript
-  - [ ] GET /insights (chamar backend)
-  - [ ] Exibição de recomendações
-
-- [ ] TASK-015.3: Conexão com backend
-  - [ ] API retorna insights baseado em dados
-
-**Entrada:** Design System (TASK-007)  
-**Saída:** `frontend/tela-ia.html`
+**Entrada:** TASK-007  
+**Saída:** 3 telas HTML/CSS adicionais (protótipos estáticos)
 
 ---
 
-### TASK-016: Integração com Backend (API)
+### TASK-009: Integração com Backend (API + JavaScript)
 **Status:** ⏳ Não iniciado  
 **Prioridade:** P0  
 **Assignee:** Frontend Developer
 
 #### Subtasks:
-- [ ] TASK-016.1: Configuração de API
-  - [ ] Base URL: `http://localhost:5000/api` (ou prod)
+- [ ] TASK-009.1: Configuração de API
+  - [ ] Base URL configurável
   - [ ] Headers padrão (Content-Type, Authorization)
-  - [ ] Tratamento de erro global
+  - [ ] Tratamento de erro global (toast)
 
-- [ ] TASK-016.2: Serviço de Autenticação
+- [ ] TASK-009.2: Autenticação
   - [ ] Login (POST /auth/login)
-  - [ ] Logout
-  - [ ] Refresh token
-  - [ ] Armazenamento seguro de token (localStorage/sessionStorage)
-  - [ ] Verificação de sessão ativa
+  - [ ] Cadastro (POST /auth/register)
+  - [ ] Token JWT (localStorage)
+  - [ ] Logout + redirect para login
 
-- [ ] TASK-016.3: Chamadas CRUD para Gastos
-  - [ ] GET /expenses (filtrar por período, categoria)
-  - [ ] POST /expenses (criar)
-  - [ ] PUT /expenses/:id (editar)
-  - [ ] DELETE /expenses/:id (deletar)
+- [ ] TASK-009.3: CRUD Gastos
+  - [ ] GET /expenses (listar, popular tabela)
+  - [ ] POST /expenses (modal criar)
+  - [ ] PUT /expenses/:id (modal editar)
+  - [ ] DELETE /expenses/:id (com confirmação)
 
-- [ ] TASK-016.4: Chamadas para Relatórios
-  - [ ] GET /reports/summary (KPIs)
-  - [ ] GET /reports/by-category (gráfico)
-  - [ ] GET /reports/trend (evolução)
+- [ ] TASK-009.4: CRUD Categorias
+  - [ ] GET /categories (listar, popular cards)
+  - [ ] POST /categories (modal criar)
+  - [ ] PUT /categories/:id (modal editar)
+  - [ ] DELETE /categories/:id (com confirmação)
 
-- [ ] TASK-016.5: Tratamento de erros
-  - [ ] Toast de sucesso/erro
-  - [ ] Retry automático
-  - [ ] Fallback offline (opcional)
+- [ ] TASK-009.5: Dashboards dinâmicos
+  - [ ] GET /reports/summary (popular KPIs)
+  - [ ] GET /alerts (popular lista alertas)
+  - [ ] GET /insights (popular insights)
 
-**Entrada:** TASK-010+  
-**Saída:** JavaScript com integração API
+- [ ] TASK-009.6: UX melhorada
+  - [ ] Toast sucesso/erro
+  - [ ] Loading states (spinner)
+  - [ ] Validação client-side antes envio
 
----
-
-### TASK-017: Acessibilidade (WCAG AA)
-**Status:** ⏳ Não iniciado  
-**Prioridade:** P1  
-**Assignee:** Frontend Developer + QA
-
-#### Subtasks:
-- [ ] TASK-017.1: Aria labels e roles
-  - [ ] Adicionar `aria-label` em botões sem texto
-  - [ ] Adicionar `aria-hidden` em elementos decorativos
-  - [ ] Usar `role` apropriados
-  - [ ] `aria-live` em toasts/alertas dinâmicos
-
-- [ ] TASK-017.2: Navegação por teclado
-  - [ ] Tab order lógico
-  - [ ] Focus visível em todos os elementos
-  - [ ] Suporte a Enter/Escape em modais
-
-- [ ] TASK-017.3: Contraste de cores
-  - [ ] Verificar contraste 4.5:1 para texto
-  - [ ] Usar ferramentas: Wave, Axe, Lighthouse
-
-- [ ] TASK-017.4: Teste com screen reader (NVDA/JAWS)
-  - [ ] Teste em telas principais
-  - [ ] Validação de anúncios
-
-- [ ] TASK-017.5: Testes com Lighthouse
-  - [ ] Score acessibilidade ≥ 90
-
-**Entrada:** Todas as telas (TASK-010~015)  
-**Saída:** Relatório de acessibilidade
-
----
-
-### TASK-018: Testes Responsivos e Cross-browser
-**Status:** ⏳ Não iniciado  
-**Prioridade:** P1  
-**Assignee:** QA
-
-#### Subtasks:
-- [ ] TASK-018.1: Testes em navegadores
-  - [ ] Chrome (desktop, mobile)
-  - [ ] Firefox (desktop, mobile)
-  - [ ] Safari (desktop, iOS)
-  - [ ] Edge (desktop)
-
-- [ ] TASK-018.2: Testes em dispositivos reais
-  - [ ] iPhone (2+ modelos)
-  - [ ] Android (2+ modelos)
-  - [ ] iPad
-  - [ ] Desktop (1920x1080, 1366x768)
-
-- [ ] TASK-018.3: Documentação de bugs encontrados
-  - [ ] Screenshot
-  - [ ] Passos para reproduzir
-  - [ ] Navegador/dispositivo
-
-**Entrada:** Todas as telas  
-**Saída:** Relatório de testes, bugs corrigidos
+**Entrada:** TASK-008  
+**Saída:** Frontend integrado com API funcional, todas as 7 telas operacionais
 
 ---
 
 ## 🔴 FASE 5B — Desenvolvimento Backend [NÃO INICIADO]
 
-### TASK-019: Estrutura Base C# (.NET)
+### TASK-010: Estrutura Base .NET + Autenticação JWT
 **Status:** ⏳ Não iniciado  
 **Prioridade:** P0  
 **Assignee:** Backend Developer
 
 #### Subtasks:
-- [ ] TASK-019.1: Setup projeto .NET
+- [ ] TASK-010.1: Setup projeto .NET
   - [ ] Criar solução C# (.NET 6+)
-  - [ ] Estrutura de pastas (Models, Controllers, Services, Data)
-  - [ ] Configuração de appsettings.json
+  - [ ] Estrutura: Models, Controllers, Services, Data
+  - [ ] appsettings.json configurado
 
-- [ ] TASK-019.2: Banco de dados
-  - [ ] Entity Framework Core setup
-  - [ ] Connection string MySQL/PostgreSQL
-  - [ ] Migrations
+- [ ] TASK-010.2: Banco de dados
+  - [ ] Entity Framework Core + MySQL/PostgreSQL
+  - [ ] Migrations automatizadas
+  - [ ] Seed de categorias padrão
 
-- [ ] TASK-019.3: Autenticação JWT
-  - [ ] Implementar middleware
-  - [ ] Token generation
-  - [ ] Validação em cada rota protegida
+- [ ] TASK-010.3: Autenticação JWT
+  - [ ] Middleware JWT
+  - [ ] Endpoints: /auth/register, /auth/login
+  - [ ] Token geração/validação
+  - [ ] Refresh token
 
 **Entrada:** Modelo de dados (TASK-004)  
-**Saída:** Projeto C# base funcionando
+**Saída:** API base com autenticação funcionando
 
 ---
 
-### TASK-020: API Endpoints CRUD
+### TASK-011: API CRUD MVP (Gastos, Categorias)
 **Status:** ⏳ Não iniciado  
 **Prioridade:** P0  
 **Assignee:** Backend Developer
 
 #### Subtasks:
-- [ ] TASK-020.1: Autenticação
-  - [ ] POST /auth/register
-  - [ ] POST /auth/login
-  - [ ] POST /auth/logout
-  - [ ] POST /auth/refresh-token
-
-- [ ] TASK-020.2: Gastos (Transações)
-  - [ ] GET /expenses (com filtros: período, categoria, busca)
+- [ ] TASK-011.1: CRUD Gastos
+  - [ ] GET /expenses (com filtros: período, categoria)
   - [ ] GET /expenses/:id
   - [ ] POST /expenses
   - [ ] PUT /expenses/:id
   - [ ] DELETE /expenses/:id
 
-- [ ] TASK-020.3: Categorias
+- [ ] TASK-011.2: CRUD Categorias
   - [ ] GET /categories
-  - [ ] GET /categories/:id
   - [ ] POST /categories
   - [ ] PUT /categories/:id
   - [ ] DELETE /categories/:id
 
-- [ ] TASK-020.4: Orçamentos
-  - [ ] GET /budgets
-  - [ ] POST /budgets
-  - [ ] PUT /budgets/:id
-  - [ ] DELETE /budgets/:id
+- [ ] TASK-011.3: Validação e regras de negócio
+  - [ ] Email válido, senha mínimo 8 chars
+  - [ ] Valor > 0, data válida
+  - [ ] Usuário só vê seus dados
+  - [ ] Status HTTP corretos (400, 401, 404, 500)
 
-- [ ] TASK-020.5: Alertas
-  - [ ] GET /alerts
-  - [ ] PUT /alerts/:id (marcar lido)
-  - [ ] DELETE /alerts/:id
-
-**Entrada:** TASK-019  
+**Entrada:** TASK-010  
 **Saída:** API endpoints testados com Postman
 
 ---
 
-### TASK-021: Validação e Regras de Negócio
-**Status:** ⏳ Não iniciado  
-**Prioridade:** P0  
-**Assignee:** Backend Developer
-
-#### Subtasks:
-- [ ] TASK-021.1: Validação de dados
-  - [ ] Email válido, senha mínimo 8 chars
-  - [ ] Valor > 0
-  - [ ] Data válida
-  - [ ] Categoria existe
-
-- [ ] TASK-021.2: Regras de negócio
-  - [ ] Usuário só vê seus dados
-  - [ ] Geração automática de alertas (orçamento excedido)
-  - [ ] Cálculo de KPIs
-
-- [ ] TASK-021.3: Tratamento de erros
-  - [ ] Status HTTP corretos (400, 401, 404, 500)
-  - [ ] Mensagens de erro úteis
-
-**Entrada:** TASK-020  
-**Saída:** Validações implementadas
-
----
-
-### TASK-022: Relatórios e KPIs
+### TASK-012: Relatórios e Alertas (Backend)
 **Status:** ⏳ Não iniciado  
 **Prioridade:** P1  
 **Assignee:** Backend Developer
 
 #### Subtasks:
-- [ ] TASK-022.1: Endpoints de relatórios
-  - [ ] GET /reports/summary (total, saldo, comparação)
+- [ ] TASK-012.1: Endpoints de Relatórios
+  - [ ] GET /reports/summary (total, saldo, maior gasto)
   - [ ] GET /reports/by-category (gasto por categoria)
-  - [ ] GET /reports/trend (evolução 6 meses)
+  - [ ] GET /reports/trend (últimos 6 meses)
 
-- [ ] TASK-022.2: Cálculos de KPIs
-  - [ ] Total gasto
-  - [ ] Saldo restante (orçamento - gasto)
-  - [ ] Maior gasto
-  - [ ] Comparação mês anterior
+- [ ] TASK-012.2: Geração de Alertas
+  - [ ] Alert ao exceder orçamento categoria
+  - [ ] Alert ao gasto acima da média
+  - [ ] GET /alerts, PUT /alerts/:id (marcar lido), DELETE
 
-- [ ] TASK-022.3: Dados para gráficos
-  - [ ] Formato JSON estruturado
-  - [ ] Dados para Chart.js
+- [ ] TASK-012.3: IA Simulada (Insights)
+  - [ ] GET /insights (recomendações simples)
+  - [ ] Lógica: se gasto > média, sugerir economia
 
-**Entrada:** TASK-021  
-**Saída:** Endpoints `/reports/*` funcionando
+**Entrada:** TASK-011  
+**Saída:** Endpoints /reports/*, /alerts, /insights funcionando
 
 ---
 
-### TASK-023: Testes Unitários Backend
+### TASK-013: Testes Unitários + QA
 **Status:** ⏳ Não iniciado  
 **Prioridade:** P1  
 **Assignee:** Backend Developer + QA
 
 #### Subtasks:
-- [ ] TASK-023.1: Testes de validação
-  - [ ] Testes de entrada inválida
+- [ ] TASK-013.1: Testes unitários
+  - [ ] Validação de dados
+  - [ ] CRUD operations
+  - [ ] Cálculos de KPIs
   - [ ] Cobertura ≥ 80%
 
-- [ ] TASK-023.2: Testes de CRUD
-  - [ ] Criar, ler, atualizar, deletar
-  - [ ] Segurança (usuário não acessa dados de outro)
+- [ ] TASK-013.2: Testes de segurança
+  - [ ] XSS, SQL injection
+  - [ ] CSRF token em formulários
+  - [ ] JWT validation
+  - [ ] Rate limiting
 
-- [ ] TASK-023.3: Testes de cálculos
-  - [ ] KPIs corretos
-  - [ ] Alertas gerados corretamente
+- [ ] TASK-013.3: Teste de performance
+  - [ ] 1.000+ transações
+  - [ ] Tempo resposta < 500ms
+  - [ ] Otimização de queries
 
-**Entrada:** TASK-022  
+**Entrada:** TASK-012  
 **Saída:** Testes automatizados, cobertura relatada
 
 ---
 
-## 🟠 FASE 6 — Análise de Dados / ML [NÃO INICIADO]
-
-### TASK-024: Implementar "IA Simulada" (Backend)
+### TASK-014: Acessibilidade (WCAG AA)
 **Status:** ⏳ Não iniciado  
-**Prioridade:** P2  
-**Assignee:** Backend Developer
+**Prioridade:** P1  
+**Assignee:** Frontend Developer + QA
 
 #### Subtasks:
-- [ ] TASK-024.1: Endpoint de insights
-  - [ ] GET /insights (retorna recomendações)
-  - [ ] Lógica simples (se gasto > média, alerta)
+- [ ] TASK-014.1: ARIA labels, roles, live regions
+- [ ] TASK-014.2: Navegação por teclado (tab order, escape, enter)
+- [ ] TASK-014.3: Contraste de cores (4.5:1 mínimo)
+- [ ] TASK-014.4: Testes com screen reader (NVDA/JAWS)
+- [ ] TASK-014.5: Lighthouse score ≥ 90
 
-- [ ] TASK-024.2: Tipos de insights
-  - [ ] Gastos aumentaram em relação ao mês anterior
-  - [ ] Categoria em risco de exceder orçamento
-  - [ ] Sugestão de economia
-
-- [ ] TASK-024.3: Integração com frontend
-  - [ ] Tela de insights usa `/insights`
-
-**Entrada:** TASK-022  
-**Saída:** Endpoint `/insights` funcionando
+**Entrada:** Todas as telas  
+**Saída:** Relatório de acessibilidade
 
 ---
 
-### TASK-025: Relatórios Avançados (Opcional)
+### TASK-015: Testes Responsivos e Cross-browser
 **Status:** ⏳ Não iniciado  
-**Prioridade:** P2  
-**Assignee:** Backend Developer
+**Prioridade:** P1  
+**Assignee:** QA
 
 #### Subtasks:
-- [ ] TASK-025.1: Previsão simples
-  - [ ] Média móvel de 3 meses
-  - [ ] Projeção para próximo mês
+- [ ] TASK-015.1: Testes em navegadores
+  - [ ] Chrome, Firefox, Safari, Edge (desktop + mobile)
+  
+- [ ] TASK-015.2: Testes em dispositivos reais
+  - [ ] iPhone, Android, iPad, Desktop
+  - [ ] Resoluções: 375px, 768px, 1024px, 1920px
 
-- [ ] TASK-025.2: Análise de padrões
-  - [ ] Categoria mais gasta
-  - [ ] Dia da semana com mais gastos
-  - [ ] Gastos recorrentes identificados
+- [ ] TASK-015.3: Documentação de bugs
 
-**Entrada:** TASK-024  
-**Saída:** Endpoints `/analytics/*`
+**Entrada:** Todas as telas  
+**Saída:** Relatório de testes
 
 ---
 
-## ⚫ FASE 7 — Comunicação e Inclusão [NÃO INICIADO]
+## 🟠 FASE 6 — Integração e QA [NÃO INICIADO]
 
-### TASK-026: Acessibilidade e LIBRAS
+### TASK-016: Integração Frontend + Backend (E2E)
+**Status:** ⏳ Não iniciado  
+**Prioridade:** P0  
+**Assignee:** Tech Lead + Frontend + Backend
+
+#### Subtasks:
+- [ ] TASK-016.1: Teste end-to-end (E2E)
+  - [ ] Login → Dashboard → Criar gasto → Ver em tabela
+  - [ ] Editar gasto → Ver alteração
+  - [ ] Deletar gasto → Ver remoção
+  - [ ] Gerar relatório
+
+- [ ] TASK-016.2: Teste de fluxo completo
+  - [ ] Cadastro de novo usuário
+  - [ ] Setup inicial (criar categorias)
+  - [ ] Registrar gastos
+  - [ ] Ver relatórios
+  - [ ] Receber alertas
+
+- [ ] TASK-016.3: Ajustes finais
+  - [ ] Correção de bugs encontrados
+  - [ ] Performance (< 2s load)
+  - [ ] Segurança (validação dados, headers)
+
+**Entrada:** TASK-009 + TASK-012  
+**Saída:** Sistema integrado funcionando
+
+---
+
+### TASK-017: Testes de Aceitação + Relatório QA
+**Status:** ⏳ Não iniciado  
+**Prioridade:** P0  
+**Assignee:** QA
+
+#### Subtasks:
+- [ ] TASK-017.1: Testes de aceitação (AT)
+  - [ ] Todos os requisitos funcionais testados
+  - [ ] Caso positivo e negativo para cada feature
+
+- [ ] TASK-017.2: Teste de performance final
+  - [ ] Carregar 1.000+ transações
+  - [ ] Tempo de resposta < 500ms
+  - [ ] Testes de carga
+
+- [ ] TASK-017.3: Relatório final de bugs
+  - [ ] Lista de todos os bugs encontrados
+  - [ ] Priorização (crítico, alto, médio, baixo)
+  - [ ] Status de correção
+
+**Entrada:** TASK-016  
+**Saída:** Relatório QA, sistema pronto para documentação
+
+---
+
+## ⚪ FASE 7 — Documentação Final [NÃO INICIADO]
+
+### TASK-018: Documentação de API + README
+**Status:** ⏳ Não iniciado  
+**Prioridade:** P1  
+**Assignee:** Tech Lead
+
+#### Subtasks:
+- [ ] TASK-018.1: Documentação de API
+  - [ ] Swagger/OpenAPI gerado
+  - [ ] Ou Postman collection exportada
+  - [ ] Exemplos de requisição/resposta
+
+- [ ] TASK-018.2: README do projeto
+  - [ ] Como instalar (frontend + backend)
+  - [ ] Como rodar (dev mode)
+  - [ ] Estrutura de pastas
+  - [ ] Tecnologias usadas
+
+**Entrada:** TASK-012 + TASK-009  
+**Saída:** Documentação técnica completa
+
+---
+
+### TASK-019: Documentação PIM (ABNT)
+**Status:** ⏳ Não iniciado  
+**Prioridade:** P0  
+**Assignee:** Tech Lead
+
+#### Subtasks:
+- [ ] TASK-019.1: Introdução + Contexto
+- [ ] TASK-019.2: Fases do desenvolvimento (Personas → API)
+- [ ] TASK-019.3: Screenshots e diagramas (DER, fluxos)
+- [ ] TASK-019.4: Resultados, testes e métricas
+- [ ] TASK-019.5: Conclusão e próximos passos
+- [ ] TASK-019.6: Referências ABNT + Apêndices
+
+**Entrada:** Todas as tarefas concluídas  
+**Saída:** Documento Word formatado ABNT (50+ páginas)
+
+---
+
+### TASK-020: Preparação para Apresentação
+**Status:** ⏳ Não iniciado  
+**Prioridade:** P1  
+**Assignee:** Tech Lead
+
+#### Subtasks:
+- [ ] TASK-020.1: Criar slides
+  - [ ] Contexto e personas (2 slides)
+  - [ ] Arquitetura e telas (7 slides)
+  - [ ] Demo do sistema (5 slides)
+  - [ ] Resultados e conclusão (2 slides)
+
+- [ ] TASK-020.2: Preparar demo ao vivo
+  - [ ] Roteiro de demonstração
+  - [ ] Dados de teste carregados
+  - [ ] Backup de vídeo
+
+- [ ] TASK-020.3: Ensaio de apresentação
+  - [ ] Mínimo 1 ensaio completo
+  - [ ] Tempo: 15-20 minutos
+
+**Entrada:** TASK-019  
+**Saída:** Slides + vídeo demo
+
+---
+
+## 🟤 FASE 8 — Deploy [OPCIONAL]
+
+### TASK-021: Deploy e Configuração de Produção
+**Status:** ⏳ Não iniciado  
+**Prioridade:** P2  
+**Assignee:** Tech Lead
+
+#### Subtasks:
+- [ ] TASK-021.1: Configuração de ambiente
+  - [ ] Variáveis de ambiente (.env)
+  - [ ] Banco de dados produção
+  - [ ] SSL/HTTPS
+
+- [ ] TASK-021.2: Deploy frontend
+  - [ ] Hospedagem (Vercel, Netlify ou GitHub Pages)
+  - [ ] Build otimizado
+  - [ ] CI/CD pipeline
+
+- [ ] TASK-021.3: Deploy backend
+  - [ ] Hospedagem (.NET - Azure, Heroku ou similar)
+  - [ ] Migrations automáticas
+  - [ ] Logs e monitoramento
+
+**Entrada:** TASK-017  
+**Saída:** Sistema em produção acessível via URL
 **Status:** ⏳ Não iniciado  
 **Prioridade:** P2  
 **Assignee:** UX/UI Designer
@@ -961,13 +745,13 @@
 |----------|-------|-----------|---|--------|
 | 📊 Estratégia & Planejamento | 3 | 3 | 100% | ✅ |
 | 🗄️ Dados & Arquitetura | 1 | 1 | 100% | ✅ |
-| 🎨 Design & UX/UI | 5 | 0 | 0% | 🔴 |
-| 💻 Frontend | 9 | 0 | 0% | 🔴 |
-| ⚙️ Backend | 7 | 0 | 0% | 🔴 |
-| ♿ Qualidade & Acessibilidade | 1 | 0 | 0% | ⏳ |
-| 📚 Documentação & Comunicação | 3 | 0 | 0% | ⏳ |
-| 🚀 Integração & Deploy | 3 | 0 | 0% | ⏳ |
-| **TOTAL** | **32** | **6** | **19%** | 🟡 |
+| 🎨 Design & UX/UI | 2 | 2 | 100% | ✅ |
+| 💻 Frontend | 3 | 0 | 0% | 🔴 |
+| ⚙️ Backend | 4 | 0 | 0% | 🔴 |
+| ♿ Qualidade (A11y + Testes) | 2 | 0 | 0% | 🔴 |
+| 🚀 Integração & QA | 2 | 0 | 0% | 🔴 |
+| 📚 Documentação | 4 | 0 | 0% | ⏳ |
+| **TOTAL** | **21** | **6** | **29%** | 🟡 |
 
 ### 📈 TASKS POR SEGMENTO
 
@@ -979,45 +763,34 @@
 #### 🗄️ Dados & Arquitetura (1 task)
 - ✅ TASK-004 — Modelo de Dados
 
-#### 🎨 Design & UX/UI (5 tasks)
-- ⏳ TASK-005 — Personas
-- ⏳ TASK-006 — Fluxos e Wireframes
-- ⏳ TASK-007 — Design System
-- ⏳ TASK-008 — Protótipos
-- ⏳ TASK-009 — Testes de Usabilidade
+#### 🎨 Design & UX/UI (2 tasks)
+- ✅ TASK-005 — Personas
+- ✅ TASK-006 — Design System + Protótipos HTML
 
-#### 💻 Frontend (9 tasks)
-- ⏳ TASK-010 — Estrutura Base HTML/CSS
-- ⏳ TASK-011 — Página de Cadastro
-- ⏳ TASK-012 — Modal Gasto
-- ⏳ TASK-013 — Página de Categorias
-- ⏳ TASK-014 — Página de Alertas
-- ⏳ TASK-015 — Página de Insights
-- ⏳ TASK-016 — Integração API
-- ⏳ TASK-017 — Acessibilidade
-- ⏳ TASK-018 — Testes Responsivos
+#### 💻 Frontend (3 tasks)
+- ⏳ TASK-007 — Modal + Categorias
+- ⏳ TASK-008 — Features Adicionais
+- ⏳ TASK-009 — Integração API
 
-#### ⚙️ Backend (7 tasks)
-- ⏳ TASK-019 — Estrutura Base .NET
-- ⏳ TASK-020 — API CRUD
-- ⏳ TASK-021 — Validação e Regras
-- ⏳ TASK-022 — Relatórios e KPIs
-- ⏳ TASK-023 — Testes Unitários
-- ⏳ TASK-024 — IA Simulada
-- ⏳ TASK-025 — Relatórios Avançados
+#### ⚙️ Backend (4 tasks)
+- ⏳ TASK-010 — Estrutura Base .NET
+- ⏳ TASK-011 — API CRUD MVP
+- ⏳ TASK-012 — Relatórios e Alertas
+- ⏳ TASK-013 — Testes Unitários
 
-#### ♿ Qualidade & Acessibilidade (1 task)
-- ⏳ TASK-026 — Acessibilidade e LIBRAS
+#### ♿ Qualidade (2 tasks)
+- ⏳ TASK-014 — Acessibilidade
+- ⏳ TASK-015 — Testes Responsivos
 
-#### 📚 Documentação & Comunicação (3 tasks)
-- ⏳ TASK-027 — Documentação Técnica
-- ⏳ TASK-031 — Documentação PIM (ABNT)
-- ⏳ TASK-032 — Apresentação
+#### 🚀 Integração & QA (2 tasks)
+- ⏳ TASK-016 — Integração E2E
+- ⏳ TASK-017 — Testes de Aceitação
 
-#### 🚀 Integração & Deploy (3 tasks)
-- ⏳ TASK-028 — Integração E2E
-- ⏳ TASK-029 — Testes QA
-- ⏳ TASK-030 — Deploy
+#### 📚 Documentação (4 tasks)
+- ⏳ TASK-018 — Documentação de API
+- ⏳ TASK-019 — Documentação PIM (ABNT)
+- ⏳ TASK-020 — Preparação para Apresentação
+- ⏳ TASK-021 — Deploy (Opcional)
 
 ---
 
@@ -1028,38 +801,37 @@
 | 1 — Definição | 1 | 1 | 100% | ✅ |
 | 2 — Planejamento | 2 | 2 | 100% | ✅ |
 | 3 — Dados | 1 | 1 | 100% | ✅ |
-| **4 — UX/UI** | **5** | **0** | **0%** | 🔴 |
-| **5 — Frontend** | **9** | **0** | **0%** | 🔴 |
-| **5B — Backend** | **7** | **0** | **0%** | 🔴 |
-| 6 — Análise/ML | 2 | 0 | 0% | ⏳ |
-| 7 — Comunicação | 2 | 0 | 0% | ⏳ |
-| 8 — Integração | 3 | 0 | 0% | ⏳ |
-| 9 — Documentação | 2 | 0 | 0% | ⏳ |
-| **TOTAL** | **34** | **6** | **18%** | 🟡 |
+| **4 — UX/UI** | **2** | **2** | **100%** | ✅ |
+| **5 — Frontend** | **3** | **0** | **0%** | 🔴 |
+| **5B — Backend** | **4** | **0** | **0%** | 🔴 |
+| 6 — Integração | 2 | 0 | 0% | ⏳ |
+| 7 — Documentação | 4 | 0 | 0% | ⏳ |
+| **TOTAL** | **19** | **6** | **32%** | 🟡 |
 
 ---
 
 ## 📅 CRONOGRAMA RECOMENDADO
 
 ```
-Semana 1 (07/05 - 12/05) — UX/UI
-├─ TASK-005 + 006: Personas + Fluxos
-├─ TASK-007: Design System
-└─ TASK-008 + 009: Protótipos + Testes
+Semana 1 (07/05 - 12/05) — UX/UI + Frontend Base
+├─ TASK-005 ✅: Personas (CONCLUÍDO)
+├─ TASK-006: Design System + 4 telas HTML
+├─ TASK-007: Modal Gasto + Tela Categorias
+└─ TASK-010: Setup .NET + Autenticação
 
-Semana 2 (13/05 - 19/05) — Desenvolvimento
-├─ TASK-010 + 011 + 012: Frontend base + Signup + Modal
-├─ TASK-019 + 020: Backend base + CRUD API
-├─ TASK-013 + 014 + 015: Páginas adicionais
-└─ TASK-016: Integração API
+Semana 2 (13/05 - 19/05) — Backend API + Frontend Integração
+├─ TASK-008: Features adicionais (Alertas, Insights, Relatórios)
+├─ TASK-009: Integração Frontend com API
+├─ TASK-011: API CRUD Gastos + Categorias
+└─ TASK-012: API Relatórios + Alertas
 
-Semana 3 (20/05 - 23/05) — Testes + Documentação
-├─ TASK-017 + 018: Acessibilidade + Testes
-├─ TASK-021 + 022 + 023: Validação + Relatórios + Testes Backend
-├─ TASK-028 + 029: Integração E2E + QA
-├─ TASK-031: Documentação ABNT
-├─ TASK-032: Apresentação
-└─ TASK-030: Deploy (opcional se tempo)
+Semana 3 (20/05 - 23/05) — QA + Documentação
+├─ TASK-013: Testes unitários backend
+├─ TASK-014 + 015: Acessibilidade e testes responsivos
+├─ TASK-016 + 017: Integração E2E + QA
+├─ TASK-018 + 019: Documentação técnica + ABNT
+├─ TASK-020: Preparação apresentação
+└─ TASK-021: Deploy (se houver tempo)
 ```
 
 ---
@@ -1067,54 +839,50 @@ Semana 3 (20/05 - 23/05) — Testes + Documentação
 ## 🎯 PRIORIDADES
 
 ### P0 (MVP — CRÍTICO)
-- TASK-005 a 009 (UX/UI base)
-- TASK-010 a 012 (Frontend base)
-- TASK-019 a 021 (Backend CRUD)
-- TASK-028 a 029 (Integração + QA)
-- TASK-031 (Documentação)
+- TASK-005 ✅ + TASK-006 (UX/UI base)
+- TASK-007 + 008 + 009 (Frontend completo)
+- TASK-010 + 011 + 012 (Backend MVP)
+- TASK-016 + 017 (Integração + QA)
+- TASK-019 (Documentação PIM)
 
 ### P1 (IMPORTANTE)
-- TASK-013 a 015 (Telas adicionais)
-- TASK-017 a 018 (Acessibilidade + Testes)
-- TASK-022 (Relatórios)
-- TASK-027 (Documentação técnica)
-- TASK-032 (Apresentação)
+- TASK-013 (Testes backend)
+- TASK-014 + 015 (Acessibilidade + Testes responsivos)
+- TASK-018 (Documentação API)
+- TASK-020 (Apresentação)
 
 ### P2 (OPCIONAL)
-- TASK-009 (Testes usabilidade)
-- TASK-024 a 025 (IA + análise avançada)
-- TASK-026 (LIBRAS)
-- TASK-030 (Deploy)
+- TASK-021 (Deploy em produção)
 
 ---
 
 ## ⚠️ DEPENDÊNCIAS CRÍTICAS
 
 ```
-TASK-007 (Design System)
+TASK-006 (Design System + HTML)
   ↓
-  ├─→ TASK-008 (Protótipos)
-  ├─→ TASK-010 (Frontend CSS)
-  └─→ TASK-019 (Backend estrutura)
+  ├─→ TASK-007 + 008 + 009 (Frontend)
+  └─→ TASK-010 (Backend estrutura)
 
-TASK-010 (Frontend base)
+TASK-009 (Frontend API integration)
   ↓
-  ├─→ TASK-011, 012, 013, 014, 015
-  └─→ TASK-016 (API integration)
+  ├─→ TASK-011 (API endpoints funcionando)
+  └─→ TASK-016 (E2E tests)
 
-TASK-020 (API endpoints)
+TASK-012 (Relatórios + Alertas)
   ↓
-  ├─→ TASK-016 (Frontend integração)
-  ├─→ TASK-021 (Validação)
-  └─→ TASK-022 (Relatórios)
+  ├─→ TASK-009 (dados no frontend)
+  └─→ TASK-016 (integração E2E)
 
-TASK-016 + TASK-020
+TASK-009 + TASK-012
   ↓
-  └─→ TASK-028 (Integração E2E)
+  └─→ TASK-016 (Integração E2E)
       ↓
-      └─→ TASK-029 (QA)
+      └─→ TASK-017 (QA + Testes aceitação)
           ↓
-          └─→ TASK-030 (Deploy)
+          └─→ TASK-019 (Documentação ABNT)
+              ↓
+              └─→ TASK-020 (Apresentação)
 ```
 
 ---
@@ -1127,5 +895,14 @@ TASK-016 + TASK-020
 - Backend pode ser desenvolvido em paralelo com frontend
 - Documentação deve ser escrita durante o desenvolvimento, não ao final
 
-**Última atualização:** 07/05/2026 às 00:00  
-**Próxima revisão:** 12/05/2026 (fim Semana 1)
+---
+
+## 📝 CHANGELOG
+
+**Reorganização MVP:**
+- ❌ Removido Figma: protótipos serão em HTML puro
+- ❌ Reduzido de 32 para 21 tasks focado no MVP
+- ✅ Frontend: 9 → 3 tasks (modalizado)
+- ✅ Backend: 7 → 4 tasks (essencial apenas)
+- ✅ Qualidade + Documentação consolidadas
+- 📊 Progress: 22% → 24% (após mudanças)
