@@ -134,6 +134,209 @@
   .page-btn { width: 30px; height: 30px; border-radius: 6px; border: 1px solid var(--border); background: var(--white); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 13px; color: var(--text-muted); }
   .page-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
   .page-btn svg { width: 14px; height: 14px; }
+
+  /* RESPONSIVE — Tablet (768px-1023px) */
+  @media (max-width: 1023px) {
+    .sidebar { width: 180px; padding: 1rem 0.75rem; }
+    .logo-name { font-size: 15px; }
+    .nav-item { padding: 0.5rem 0.6rem; font-size: 13px; }
+    .nav-item svg { width: 16px; height: 16px; }
+    .main { padding: 1.5rem 2rem; }
+    .content-grid { grid-template-columns: 1fr; gap: 15px; }
+    .form-card { position: static; }
+    .topbar { flex-direction: column; gap: 1rem; align-items: flex-start; }
+    .btn-add { width: 100%; justify-content: center; }
+  }
+
+  /* RESPONSIVE — Mobile (375px-767px) */
+  @media (max-width: 767px) {
+    body { flex-direction: column; }
+    .sidebar { 
+      width: 100%; 
+      min-height: auto; 
+      flex-direction: row;
+      align-items: center;
+      padding: 1rem;
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+    .logo { margin-bottom: 0; margin-right: 1rem; flex-shrink: 0; }
+    .logo-name { font-size: 14px; }
+    
+    .nav-label { display: none; }
+    .nav-item { 
+      padding: 0.4rem 0.6rem; 
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+    .sidebar-bottom { margin-left: auto; margin-top: 0; }
+    .user-pill { padding: 0.4rem 0.6rem; }
+    .avatar { width: 24px; height: 24px; font-size: 10px; }
+    .user-info { display: none; }
+
+    .main { 
+      padding: 1rem;
+    }
+    
+    .topbar-left h1 { font-size: 1.3rem; }
+    .topbar-left p { font-size: 12px; }
+    
+    .btn-add { 
+      padding: 0.45rem 0.8rem;
+      font-size: 13px;
+    }
+
+    .content-grid { 
+      grid-template-columns: 1fr; 
+      gap: 10px;
+    }
+
+    .expenses-toolbar {
+      flex-direction: column;
+      gap: 8px;
+      padding: 0.8rem 1rem;
+    }
+
+    .search-box { 
+      padding: 0.4rem 0.8rem;
+      font-size: 12px;
+    }
+
+    .search-box svg { width: 13px; height: 13px; }
+
+    .filter-btn {
+      padding: 0.4rem 0.8rem;
+      font-size: 12px;
+    }
+
+    .filter-btn svg { width: 12px; height: 12px; }
+
+    table { 
+      font-size: 12px;
+      overflow-x: auto;
+      display: block;
+    }
+
+    thead { display: none; }
+
+    tbody, tr, td { 
+      display: block; 
+      width: 100%;
+    }
+
+    tr {
+      margin-bottom: 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px;
+      background: var(--white);
+    }
+
+    td { 
+      padding: 0;
+      border: none;
+      margin-bottom: 6px;
+      padding-left: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    td::before {
+      content: attr(data-label);
+      font-weight: 500;
+      font-size: 11px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      flex: 0 0 40%;
+    }
+
+    .cat-badge { 
+      padding: 2px 6px; 
+      font-size: 10px;
+    }
+
+    .amount { font-size: 13px; }
+
+    .actions { 
+      opacity: 1;
+      gap: 4px;
+    }
+
+    .action-btn { 
+      width: 24px; 
+      height: 24px;
+    }
+
+    .action-btn svg { width: 11px; height: 11px; }
+
+    .form-card { 
+      padding: 1.2rem;
+      height: auto;
+    }
+
+    .form-card h3 { 
+      font-size: 1.1rem; 
+      margin-bottom: 1rem;
+    }
+
+    .field { margin-bottom: 0.9rem; }
+
+    .field input, .field select, .field textarea {
+      height: 40px;
+      font-size: 13px;
+      padding: 0 10px;
+    }
+
+    .field textarea {
+      height: 60px;
+      padding: 8px 10px;
+    }
+
+    .field label { 
+      font-size: 11px; 
+      margin-bottom: 4px;
+    }
+
+    .amount-field .prefix { 
+      left: 10px;
+      font-size: 13px;
+    }
+
+    .amount-field input { 
+      padding-left: 32px;
+    }
+
+    .row-two {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    .btn-row {
+      gap: 8px;
+    }
+
+    .btn-primary, .btn-secondary {
+      height: 40px;
+      font-size: 13px;
+    }
+
+    .pagination {
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px 1rem;
+    }
+
+    .pagination-info { font-size: 11px; }
+
+    .page-btn { 
+      width: 26px; 
+      height: 26px;
+      font-size: 12px;
+    }
+
+    .page-btn svg { width: 12px; height: 12px; }
+  }
 </style>
 </head>
 <body>
