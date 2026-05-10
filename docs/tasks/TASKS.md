@@ -345,8 +345,8 @@
 **Assignee:** Frontend Developer + QA
 
 #### Subtasks:
-- [x] TASK-014.1: ARIA labels, roles, live regions
-- [ ] TASK-014.2: Navegação por teclado (tab order, escape, enter)
+- [x] TASK-014.1: ARIA labels, roles, live regions (Concluído em todas as telas)
+- [/] TASK-014.2: Navegação por teclado (Implementado suporte básico)
 - [ ] TASK-014.3: Contraste de cores (4.5:1 mínimo)
 - [ ] TASK-014.4: Testes com screen reader (NVDA/JAWS)
 - [ ] TASK-014.5: Lighthouse score ≥ 90
