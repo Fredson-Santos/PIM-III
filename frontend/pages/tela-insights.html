@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ConektaFinance — Insights da IA</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/global.css">
+</head>
+<body>
+
+<aside class="sidebar">
+  <div class="logo">
+    <div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#27500A" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+    <span class="logo-name">ConektaFinance</span>
+  </div>
+  <span class="nav-label">Principal</span>
+  <a class="nav-item" href="tela-dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Dashboard</a>
+  <a class="nav-item" href="tela-gastos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>Gastos</a>
+  <a class="nav-item" href="tela-categorias.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 7h18M3 12h18M3 17h18"/></svg>Categorias</a>
+  <span class="nav-label">Análise</span>
+  <a class="nav-item" href="tela-relatorios.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>Relatórios</a>
+  <a class="nav-item" href="tela-alertas.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>Alertas</a>
+  <a class="nav-item active" href="tela-insights.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3"/></svg>IA Simulada</a>
+  <div class="sidebar-bottom">
+    <div class="user-pill"><div class="avatar">JS</div><div class="user-info"><div class="name">João Silva</div><div class="role">Conta pessoal</div></div></div>
+  </div>
+</aside>
+
+<main class="main">
+  <div class="topbar">
+    <div class="topbar-left">
+      <h1><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg> Insights</h1>
+      <p>Recomendações inteligentes baseadas no seu padrão de gastos</p>
+    </div>
+    <div class="topbar-right">
+      <div class="period-tabs">
+        <button class="period-tab">Este Mês</button>
+        <button class="period-tab active">Últimos 3 Meses</button>
+        <button class="period-tab">Este Ano</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-insight">
+    <span class="hero-label">Destaque do Período</span>
+    <h2 class="hero-title">Você está no caminho certo! Seus gastos com assinaturas diminuíram 15% neste trimestre.</h2>
+    <a href="#" class="hero-action">Ver detalhes do relatório <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  </div>
+
+  <div class="insights-grid" id="insightsGrid">
+    <!-- Dynamic Insights -->
+  </div>
+
+</main>
+
+<script src="js/api.js"></script>
+<script>
+  async function loadInsights() {
+    const grid = document.getElementById('insightsGrid');
+    Utils.showLoading('insightsGrid');
+
+    try {
+      const insights = await InsightService.getAll();
+      
+      if (insights.length === 0) {
+        grid.innerHTML = '<p style="text-align:center;grid-column:1/-1;">Não há insights suficientes no momento. Continue registrando seus gastos.</p>';
+        return;
+      }
+
+      grid.innerHTML = insights.map(i => {
+        let themeClass = 'theme-opt';
+        let iconHtml = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>';
+        
+        if (i.category === 'Economia') {
+          themeClass = 'theme-save';
+          iconHtml = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>';
+        } else if (i.category === 'Alerta') {
+          themeClass = 'theme-warn';
+          iconHtml = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>';
+        }
+
+        return `
+          <div class="insight-card ${themeClass}">
+            <div class="card-header">
+              <div class="card-icon">${iconHtml}</div>
+              <span class="impact-badge">${i.priority === 'Alto' ? 'ALTO IMPACTO' : i.priority.toUpperCase()}</span>
+            </div>
+            <div class="card-content">
+              <h3>${i.title}</h3>
+              <p>${i.description}</p>
+            </div>
+            <div class="card-footer">
+              <button class="btn-apply">Ver análise</button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    } catch (err) {
+      grid.innerHTML = '<p style="color:red;grid-column:1/-1;">Erro ao carregar insights.</p>';
+    }
+  }
+
+  loadInsights();
+</script>
+
+</body>
+</html>
