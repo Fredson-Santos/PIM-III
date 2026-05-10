@@ -28,4 +28,8 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="10.1.7" />
   </ItemGroup>
 
+  <PropertyGroup>
+    <DefaultItemExcludes>$(DefaultItemExcludes);tests\**</DefaultItemExcludes>
+  </PropertyGroup>
+
 </Project>
