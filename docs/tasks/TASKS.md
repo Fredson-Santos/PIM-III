@@ -129,23 +129,23 @@
 ## 🔴 FASE 5 — Desenvolvimento Frontend [🔴 EM ANDAMENTO]
 
 ### TASK-007: Modal Criar/Editar Gasto + Tela Categorias
-**Status:** 🟡 Em andamento  
+**Status:** ✅ Concluído  
 **Prioridade:** P0  
 **Assignee:** Frontend Developer
 
 #### Subtasks:
-- [ ] TASK-007.1: Modal criar/editar gasto
-  - [ ] Form: valor, descrição, categoria, data
-  - [ ] Validação visual (CSS)
-  - [ ] Abrir/fechar (button click, escape key)
-  - [ ] Accessibility: focus management, aria-labels
+- [x] TASK-007.1: Modal criar/editar gasto
+  - [x] Form: valor, descrição, categoria, data
+  - [x] Validação visual (CSS)
+  - [x] Abrir/fechar (button click, escape key)
+  - [x] Accessibility: focus management, aria-labels
 
-- [ ] TASK-007.2: Tela Categorias (CRUD visual)
-  - [ ] Lista de categorias com cards
-  - [ ] Botão "Nova categoria"
-  - [ ] Modal criar/editar categoria
-  - [ ] Botões delete com confirmação modal
-  - [ ] Responsivo
+- [x] TASK-007.2: Tela Categorias (CRUD visual)
+  - [x] Lista de categorias com cards
+  - [x] Botão "Nova categoria"
+  - [x] Modal criar/editar categoria
+  - [x] Botões delete com confirmação modal
+  - [x] Responsivo
 
 **Entrada:** TASK-006  
 **Saída:** Modal integrado em tela-gastos.html + tela-categorias.html funcional (sem API)
@@ -153,27 +153,27 @@
 ---
 
 ### TASK-008: Features Adicionais (Alertas, Insights, Relatórios)
-**Status:** ⏳ Não iniciado  
+**Status:** ✅ Concluído  
 **Prioridade:** P1  
 **Assignee:** Frontend Developer
 
 #### Subtasks:
-- [ ] TASK-008.1: Tela Alertas
-  - [ ] Lista de alertas com cards
-  - [ ] Tipos visuais: orçamento_excedido, gasto_alto, categoria_limite
-  - [ ] Botões: marcar como lido, deletar
-  - [ ] Responsivo
+- [x] TASK-008.1: Tela Alertas
+  - [x] Lista de alertas com cards
+  - [x] Tipos visuais: orçamento_excedido, gasto_alto, categoria_limite
+  - [x] Botões: marcar como lido, deletar
+  - [x] Responsivo
 
-- [ ] TASK-008.2: Tela Insights (IA Simulada)
-  - [ ] Cards com recomendações de economia (mockadas)
-  - [ ] Visualização por período (seletor)
-  - [ ] Responsive
+- [x] TASK-008.2: Tela Insights (IA Simulada)
+  - [x] Cards com recomendações de economia (mockadas)
+  - [x] Visualização por período (seletor)
+  - [x] Responsive
 
-- [ ] TASK-008.3: Tela Relatórios
-  - [ ] Cards de KPIs (total, saldo, maior gasto) com números mockados
-  - [ ] Espaço para gráficos (Chart.js later)
-  - [ ] Filtro por período
-  - [ ] Responsive
+- [x] TASK-008.3: Tela Relatórios
+  - [x] Cards de KPIs (total, saldo, maior gasto) com números mockados
+  - [x] Espaço para gráficos (Chart.js later)
+  - [x] Filtro por período
+  - [x] Responsive
 
 **Entrada:** TASK-007  
 **Saída:** 3 telas HTML/CSS adicionais (protótipos estáticos)
