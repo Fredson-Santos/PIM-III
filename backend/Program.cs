@@ -70,6 +70,13 @@ builder.Services.AddScoped<IInsightService, InsightService>();
 
 var app = builder.Build();
 
+// Aplicar seed no banco de dados
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    SeedData.Initialize(context);
+}
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
