@@ -59,7 +59,7 @@ PERFORMANCE_SECURITY_VALIDATION.md           # Guia de validação (24 KB)
 
 ### Tracking
 ```
-.project/TASK-016-PROGRESS.md                # Progress tracker
+./TASK-016-PROGRESS.md                # Progress tracker
 ```
 
 ---

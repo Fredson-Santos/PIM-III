@@ -200,7 +200,7 @@
 
 - [Playwright Official Docs](https://playwright.dev/)
 - [README.md local](./e2e-tests/README.md)
-- [TASKS.md](../docs/tasks/TASKS.md#task-016-integração-frontend--backend-e2e)
+- [TASKS.md](./TASKS.md#task-016-integração-frontend--backend-e2e)
 
 ---
 
