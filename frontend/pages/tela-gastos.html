@@ -239,7 +239,13 @@
       
       return `
       <tr>
-        <td data-label="Descrição"><strong style="font-weight:500">${sanitizeHtml(e.description)}</strong><br><span style="font-size:11px;color:var(--text-muted)">${sanitizeHtml(e.observation || '')}</span></td>
+        <td data-label="Descrição">
+          <div class="td-content">
+            <strong style="font-weight:500">${sanitizeHtml(e.description)}</strong>
+            <br>
+            <span style="font-size:11px;color:var(--text-muted)">${sanitizeHtml(e.observation || '')}</span>
+          </div>
+        </td>
         <td data-label="Categoria">
           ${cat ? `<span class="cat-badge" style="background:${cat.colorHex}22; color:${cat.colorHex}">${sanitizeHtml(cat.name)}</span>` : `<span class="cat-badge cat-housing">Sem Categoria</span>`}
         </td>

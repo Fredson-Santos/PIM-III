@@ -164,34 +164,34 @@
         </thead>
         <tbody>
           <tr>
-            <td>Supermercado Extra</td>
-            <td><span class="cat-badge cat-food">Alimentação</span></td>
-            <td style="color:var(--text-muted)">12/05</td>
-            <td class="amount-neg" style="text-align:right">−R$ 187,50</td>
+            <td data-label="Descrição">Supermercado Extra</td>
+            <td data-label="Categoria"><span class="cat-badge cat-food">Alimentação</span></td>
+            <td data-label="Data" style="color:var(--text-muted)">12/05</td>
+            <td data-label="Valor" class="amount-neg" style="text-align:right">−R$ 187,50</td>
           </tr>
           <tr>
-            <td>Uber — reunião cliente</td>
-            <td><span class="cat-badge cat-transport">Transporte</span></td>
-            <td style="color:var(--text-muted)">11/05</td>
-            <td class="amount-neg" style="text-align:right">−R$ 34,00</td>
+            <td data-label="Descrição">Uber — reunião cliente</td>
+            <td data-label="Categoria"><span class="cat-badge cat-transport">Transporte</span></td>
+            <td data-label="Data" style="color:var(--text-muted)">11/05</td>
+            <td data-label="Valor" class="amount-neg" style="text-align:right">−R$ 34,00</td>
           </tr>
           <tr>
-            <td>Cinema e jantar</td>
-            <td><span class="cat-badge cat-leisure">Lazer</span></td>
-            <td style="color:var(--text-muted)">10/05</td>
-            <td class="amount-neg" style="text-align:right">−R$ 120,00</td>
+            <td data-label="Descrição">Cinema e jantar</td>
+            <td data-label="Categoria"><span class="cat-badge cat-leisure">Lazer</span></td>
+            <td data-label="Data" style="color:var(--text-muted)">10/05</td>
+            <td data-label="Valor" class="amount-neg" style="text-align:right">−R$ 120,00</td>
           </tr>
           <tr>
-            <td>Farmácia São João</td>
-            <td><span class="cat-badge cat-health">Saúde</span></td>
-            <td style="color:var(--text-muted)">09/05</td>
-            <td class="amount-neg" style="text-align:right">−R$ 56,80</td>
+            <td data-label="Descrição">Farmácia São João</td>
+            <td data-label="Categoria"><span class="cat-badge cat-health">Saúde</span></td>
+            <td data-label="Data" style="color:var(--text-muted)">09/05</td>
+            <td data-label="Valor" class="amount-neg" style="text-align:right">−R$ 56,80</td>
           </tr>
           <tr>
-            <td>iFood — pizza</td>
-            <td><span class="cat-badge cat-food">Alimentação</span></td>
-            <td style="color:var(--text-muted)">08/05</td>
-            <td class="amount-neg" style="text-align:right">−R$ 67,90</td>
+            <td data-label="Descrição">iFood — pizza</td>
+            <td data-label="Categoria"><span class="cat-badge cat-food">Alimentação</span></td>
+            <td data-label="Data" style="color:var(--text-muted)">08/05</td>
+            <td data-label="Valor" class="amount-neg" style="text-align:right">−R$ 67,90</td>
           </tr>
         </tbody>
       </table>
@@ -332,10 +332,10 @@ async function initDashboard() {
       const cat = categories.find(c => c.id === e.categoryId);
       return `
         <tr>
-          <td>${sanitizeHtml(e.description)}</td>
-          <td><span class="cat-badge" style="background:${cat?.colorCode || cat?.colorHex || '#333'}22; color:${cat?.colorCode || cat?.colorHex || '#333'}">${sanitizeHtml(cat?.name || 'Sem Categoria')}</span></td>
-          <td style="color:var(--text-muted)">${Utils.formatDate(e.date).substring(0, 5)}</td>
-          <td class="amount-neg" style="text-align:right">−${Utils.formatCurrency(e.amount)}</td>
+          <td data-label="Descrição">${sanitizeHtml(e.description)}</td>
+          <td data-label="Categoria"><span class="cat-badge" style="background:${cat?.colorCode || cat?.colorHex || '#333'}22; color:${cat?.colorCode || cat?.colorHex || '#333'}">${sanitizeHtml(cat?.name || 'Sem Categoria')}</span></td>
+          <td data-label="Data" style="color:var(--text-muted)">${Utils.formatDate(e.date).substring(0, 5)}</td>
+          <td data-label="Valor" class="amount-neg" style="text-align:right">−${Utils.formatCurrency(e.amount)}</td>
         </tr>
       `;
     }).join('');
