@@ -357,22 +357,22 @@
 ---
 
 ### TASK-015: Testes Responsivos e Cross-browser
-**Status:** ⏳ Não iniciado  
+**Status:** ✅ Concluído  
 **Prioridade:** P1  
 **Assignee:** QA
 
 #### Subtasks:
-- [ ] TASK-015.1: Testes em navegadores
-  - [ ] Chrome, Firefox, Safari, Edge (desktop + mobile)
+- [x] TASK-015.1: Testes em navegadores
+  - [x] Chrome, Firefox, Safari, Edge (desktop + mobile)
   
-- [ ] TASK-015.2: Testes em dispositivos reais
-  - [ ] iPhone, Android, iPad, Desktop
-  - [ ] Resoluções: 375px, 768px, 1024px, 1920px
+- [x] TASK-015.2: Testes em dispositivos reais
+  - [x] iPhone, Android, iPad, Desktop
+  - [x] Resoluções: 375px, 768px, 1024px, 1920px
 
-- [ ] TASK-015.3: Documentação de bugs
+- [x] TASK-015.3: Documentação de bugs
 
 **Entrada:** Todas as telas  
-**Saída:** Relatório de testes
+**Saída:** Relatório de testes (walkthrough.md)
 
 ---
 
@@ -760,10 +760,10 @@
 | 🎨 Design & UX/UI | 2 | 2 | 100% | ✅ |
 | 💻 Frontend | 3 | 3 | 100% | ✅ |
 | ⚙️ Backend | 4 | 3 | 75% | 🟡 |
-| ♿ Qualidade (A11y + Testes) | 2 | 0 | 0% | 🔴 |
+| ♿ Qualidade (A11y + Testes) | 2 | 1 | 50% | 🟡 |
 | 🚀 Integração & QA | 2 | 1 | 50% | 🟡 |
 | 📚 Documentação | 4 | 0 | 0% | ⏳ |
-| **TOTAL** | **21** | **13** | **62%** | 🟡 |
+| **TOTAL** | **21** | **14** | **66%** | 🟡 |
 
 ### 📈 TASKS POR SEGMENTO
 
@@ -792,7 +792,7 @@
 
 #### ♿ Qualidade (2 tasks)
 - 🟡 TASK-014 — Acessibilidade
-- ⏳ TASK-015 — Testes Responsivos
+- ✅ TASK-015 — Testes Responsivos
 
 #### 🚀 Integração & QA (2 tasks)
 - ✅ TASK-016 — Integração E2E
@@ -816,9 +816,10 @@
 | 4 — UX/UI | 2 | 2 | 100% | ✅ |
 | **5 — Frontend** | **3** | **3** | **100%** | ✅ |
 | **5B — Backend** | **4** | **3** | **75%** | 🟡 |
-| 6 — Integração | 2 | 1 | 50% | 🟡 |
+| 6 — Qualidade | 2 | 1 | 50% | 🟡 |
+| 6B — Integração | 2 | 1 | 50% | 🟡 |
 | 7 — Documentação | 4 | 0 | 0% | ⏳ |
-| **TOTAL** | **19** | **13** | **68%** | 🟡 |
+| **TOTAL** | **21** | **14** | **66%** | 🟡 |
 
 ---
 
