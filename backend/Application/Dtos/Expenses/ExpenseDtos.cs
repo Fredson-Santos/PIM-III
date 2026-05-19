@@ -15,7 +15,11 @@ public record ExpenseResponse(
     ExpenseStatus Status,
     DateTime CreatedAt,
     DateTime UpdatedAt
-);
+)
+{
+    public decimal Amount => Value;
+    public DateTime Date => TransactionDate;
+};
 
 public record CreateExpenseRequest(
     int CategoryId,

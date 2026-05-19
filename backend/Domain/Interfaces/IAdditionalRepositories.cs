@@ -18,3 +18,12 @@ public interface IAlertRepository
     Task UpdateAsync(Alert alert);
     Task DeleteAsync(int id);
 }
+
+public interface IIncomeRepository
+{
+    Task<IEnumerable<Income>> GetByUserIdAsync(int userId, DateTime? start = null, DateTime? end = null);
+    Task<Income?> GetByIdAsync(int id);
+    Task AddAsync(Income income);
+    Task DeleteAsync(int id);
+}
+

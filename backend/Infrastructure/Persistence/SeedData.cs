@@ -3,6 +3,7 @@ using PIM_III_Backend.Domain.Enums;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Cryptography;
 using System.Text;
+using Microsoft.EntityFrameworkCore;
 
 namespace PIM_III_Backend.Infrastructure.Persistence;
 
@@ -10,8 +11,9 @@ public static class SeedData
 {
     public static void Initialize(AppDbContext context)
     {
-        // Garantir que o banco existe
-        context.Database.EnsureCreated();
+        // Aplicar migrações e garantir que o banco existe
+        context.Database.Migrate();
+
 
         // Se já houver dados, não fazer seed novamente
         if (context.Users.Any())
@@ -44,6 +46,15 @@ public static class SeedData
                 Email = "maria@teste.com",
                 PasswordHash = HashPassword("senha789"),
                 FullName = "Maria Santos",
+                CreatedAt = DateTime.UtcNow,
+                UpdatedAt = DateTime.UtcNow
+            },
+            new User
+            {
+                Id = 4,
+                Email = "ana.oliveira@teste.com",
+                PasswordHash = HashPassword("senha999"),
+                FullName = "Ana Oliveira",
                 CreatedAt = DateTime.UtcNow,
                 UpdatedAt = DateTime.UtcNow
             }
@@ -493,10 +504,7 @@ public static class SeedData
     // Helper para hashear senha
     private static string HashPassword(string password)
     {
-        using (var sha256 = SHA256.Create())
-        {
-            var hash = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
-            return Convert.ToBase64String(hash);
-        }
+        // Usar BCrypt ao invés de SHA256 puro para consistência com AuthService
+        return BCrypt.Net.BCrypt.HashPassword(password);
     }
 }

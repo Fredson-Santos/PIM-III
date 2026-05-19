@@ -41,8 +41,16 @@ public class ExpensesController : ControllerBase
     {
         var expense = await _service.CreateAsync(GetCurrentUserId(), request);
         
-        // Verificar alertas de orçamento de forma assíncrona (Fire and Forget ou aguardar conforme criticidade)
-        _ = _alertService.CheckBudgetAlertsAsync(GetCurrentUserId(), request.CategoryId, request.Value);
+        // Aguardar verificação de alertas (não fire-and-forget)
+        try
+        {
+            await _alertService.CheckBudgetAlertsAsync(GetCurrentUserId(), request.CategoryId, request.Value);
+        }
+        catch (Exception ex)
+        {
+            // Log mas não falha a requisição
+            Console.WriteLine($"Erro ao verificar alertas: {ex.Message}");
+        }
 
         return CreatedAtAction(nameof(GetById), new { id = expense.Id }, expense);
     }

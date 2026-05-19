@@ -19,9 +19,11 @@ builder.Services.AddValidatorsFromAssembly(typeof(Program).Assembly);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Autenticação JWT
+// Autenticação JWT - Secret vem de variável de ambiente
 var jwtSettings = builder.Configuration.GetSection("JwtSettings");
-var secret = jwtSettings["Secret"] ?? "pim-iii-chave-secreta-minimo-32-caracteres-aqui";
+var secret = Environment.GetEnvironmentVariable("JWT_SECRET") 
+    ?? jwtSettings["Secret"]
+    ?? throw new InvalidOperationException("JWT_SECRET não configurado");
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -29,7 +31,7 @@ builder.Services.AddAuthentication(options =>
 })
 .AddJwtBearer(options =>
 {
-    options.RequireHttpsMetadata = false;
+    options.RequireHttpsMetadata = !builder.Environment.IsDevelopment(); // HTTPS obrigatório em produção
     options.SaveToken = true;
     options.TokenValidationParameters = new TokenValidationParameters
     {
@@ -48,10 +50,18 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// CORS (permitir frontend local)
+// CORS (restringir a origens específicas, não AllowAnyOrigin)
 builder.Services.AddCors(options =>
     options.AddDefaultPolicy(policy =>
-        policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()));
+    {
+        var allowedOrigins = builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>()
+            ?? new[] { "http://localhost:8080", "http://127.0.0.1:8080", "http://localhost:3000", "http://localhost:5173", "http://127.0.0.1" };
+        
+        policy.WithOrigins(allowedOrigins)
+              .AllowAnyMethod()
+              .AllowAnyHeader()
+              .AllowCredentials();
+    }));
 
 // Repositories
 builder.Services.AddScoped<IUserRepository, UserRepository>();
@@ -59,6 +69,7 @@ builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IExpenseRepository, ExpenseRepository>();
 builder.Services.AddScoped<IBudgetRepository, BudgetRepository>();
 builder.Services.AddScoped<IAlertRepository, AlertRepository>();
+builder.Services.AddScoped<IIncomeRepository, IncomeRepository>();
 
 // Services
 builder.Services.AddScoped<IAuthService, AuthService>();
@@ -67,6 +78,7 @@ builder.Services.AddScoped<IExpenseService, ExpenseService>();
 builder.Services.AddScoped<IReportService, ReportService>();
 builder.Services.AddScoped<IAlertService, AlertService>();
 builder.Services.AddScoped<IInsightService, InsightService>();
+builder.Services.AddScoped<IIncomeService, IncomeService>();
 
 var app = builder.Build();
 

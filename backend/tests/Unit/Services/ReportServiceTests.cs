@@ -10,12 +10,14 @@ namespace PIM_III_Backend.Tests.Unit.Services;
 public class ReportServiceTests
 {
     private readonly Mock<IExpenseRepository> _expenseRepoMock;
+    private readonly Mock<IBudgetRepository> _budgetRepoMock;
     private readonly ReportService _service;
 
     public ReportServiceTests()
     {
         _expenseRepoMock = new Mock<IExpenseRepository>();
-        _service = new ReportService(_expenseRepoMock.Object);
+        _budgetRepoMock = new Mock<IBudgetRepository>();
+        _service = new ReportService(_expenseRepoMock.Object, _budgetRepoMock.Object);
     }
 
     [Fact]
@@ -30,14 +32,16 @@ public class ReportServiceTests
             new Expense { Value = 50, Description = "Gasto 3" }
         };
         _expenseRepoMock.Setup(x => x.GetByUserIdAsync(userId, null, null, null)).ReturnsAsync(expenses);
+        _budgetRepoMock.Setup(x => x.GetByUserIdAsync(userId)).ReturnsAsync(new List<Budget>());
 
         // Act
         var result = await _service.GetSummaryAsync(userId);
 
         // Assert
-        result.TotalExpenses.Should().Be(400);
-        result.HighestExpenseValue.Should().Be(250);
-        result.HighestExpenseDescription.Should().Be("Gasto 2");
+        result.TotalSpent.Should().Be(400);
+        result.LargestExpense.Should().NotBeNull();
+        result.LargestExpense!.Amount.Should().Be(250);
+        result.LargestExpense.Description.Should().Be("Gasto 2");
     }
 
     [Fact]
@@ -51,13 +55,14 @@ public class ReportServiceTests
             new Expense { Value = 300, CategoryId = 2, Category = new Category { Name = "Transporte" } }
         };
         _expenseRepoMock.Setup(x => x.GetByUserIdAsync(userId, null, null, null)).ReturnsAsync(expenses);
+        _budgetRepoMock.Setup(x => x.GetByUserIdAsync(userId)).ReturnsAsync(new List<Budget>());
 
         // Act
         var result = await _service.GetByCategoryAsync(userId);
 
         // Assert
         result.Should().HaveCount(2);
-        result.First(x => x.CategoryName == "Transporte").Percentage.Should().Be(75);
-        result.First(x => x.CategoryName == "Alimentação").Percentage.Should().Be(25);
+        result.First(x => x.CategoryName == "Transporte").PercentageUsed.Should().Be(75);
+        result.First(x => x.CategoryName == "Alimentação").PercentageUsed.Should().Be(25);
     }
 }

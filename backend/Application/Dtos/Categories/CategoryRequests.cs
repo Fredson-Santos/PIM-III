@@ -4,12 +4,14 @@ public record CreateCategoryRequest(
     string Name,
     string Description,
     string ColorCode,
-    string Icon
+    string Icon,
+    decimal? BudgetLimit = null
 );
 
 public record UpdateCategoryRequest(
     string Name,
     string Description,
     string ColorCode,
-    string Icon
+    string Icon,
+    decimal? BudgetLimit = null
 );

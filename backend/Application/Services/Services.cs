@@ -8,26 +8,42 @@ namespace PIM_III_Backend.Application.Services;
 public class CategoryService : ICategoryService
 {
     private readonly ICategoryRepository _repository;
+    private readonly IBudgetRepository _budgetRepository;
 
-    public CategoryService(ICategoryRepository repository)
+    public CategoryService(ICategoryRepository repository, IBudgetRepository budgetRepository)
     {
         _repository = repository;
+        _budgetRepository = budgetRepository;
     }
 
-    public async Task<IEnumerable<CategoryResponse>> GetAllAsync()
+    public async Task<IEnumerable<CategoryResponse>> GetAllAsync(int userId)
     {
+        var now = DateTime.UtcNow;
         var categories = await _repository.GetAllAsync();
-        return categories.Select(c => new CategoryResponse(c.Id, c.Name, c.Description, c.ColorCode, c.Icon, c.CreatedAt));
+        var budgets = await _budgetRepository.GetByUserIdAsync(userId);
+        var currentBudgets = budgets.Where(x => x.PeriodYear == now.Year && x.PeriodMonth == now.Month).ToList();
+        if (!currentBudgets.Any() && budgets.Any()) currentBudgets = budgets.ToList();
+
+        return categories.Select(c => 
+        {
+            var budget = currentBudgets.FirstOrDefault(b => b.CategoryId == c.Id);
+            return new CategoryResponse(c.Id, c.Name, c.Description, c.ColorCode, c.Icon, c.CreatedAt, budget?.LimitValue);
+        });
     }
 
-    public async Task<CategoryResponse?> GetByIdAsync(int id)
+    public async Task<CategoryResponse?> GetByIdAsync(int id, int userId)
     {
+        var now = DateTime.UtcNow;
         var c = await _repository.GetByIdAsync(id);
-        return c == null ? null : new CategoryResponse(c.Id, c.Name, c.Description, c.ColorCode, c.Icon, c.CreatedAt);
+        if (c == null) return null;
+
+        var budget = await _budgetRepository.GetByUserAndCategoryAsync(userId, id, now.Month, now.Year);
+        return new CategoryResponse(c.Id, c.Name, c.Description, c.ColorCode, c.Icon, c.CreatedAt, budget?.LimitValue);
     }
 
-    public async Task<CategoryResponse> CreateAsync(CreateCategoryRequest request)
+    public async Task<CategoryResponse> CreateAsync(CreateCategoryRequest request, int userId)
     {
+        var now = DateTime.UtcNow;
         var category = new Category
         {
             Name = request.Name,
@@ -37,11 +53,28 @@ public class CategoryService : ICategoryService
         };
 
         await _repository.AddAsync(category);
-        return new CategoryResponse(category.Id, category.Name, category.Description, category.ColorCode, category.Icon, category.CreatedAt);
+
+        if (request.BudgetLimit.HasValue && request.BudgetLimit.Value > 0)
+        {
+            var budget = new Budget
+            {
+                UserId = userId,
+                CategoryId = category.Id,
+                LimitValue = request.BudgetLimit.Value,
+                PeriodMonth = now.Month,
+                PeriodYear = now.Year,
+                CreatedAt = now,
+                UpdatedAt = now
+            };
+            await _budgetRepository.AddAsync(budget);
+        }
+
+        return new CategoryResponse(category.Id, category.Name, category.Description, category.ColorCode, category.Icon, category.CreatedAt, request.BudgetLimit);
     }
 
-    public async Task UpdateAsync(int id, UpdateCategoryRequest request)
+    public async Task UpdateAsync(int id, UpdateCategoryRequest request, int userId)
     {
+        var now = DateTime.UtcNow;
         var category = await _repository.GetByIdAsync(id);
         if (category == null) throw new Exception("Category not found");
 
@@ -51,92 +84,39 @@ public class CategoryService : ICategoryService
         category.Icon = request.Icon;
 
         await _repository.UpdateAsync(category);
-    }
 
-    public async Task DeleteAsync(int id)
-    {
-        await _repository.DeleteAsync(id);
-    }
-}
-
-public class ExpenseService : IExpenseService
-{
-    private readonly IExpenseRepository _repository;
-
-    public ExpenseService(IExpenseRepository repository)
-    {
-        _repository = repository;
-    }
-
-    public async Task<IEnumerable<ExpenseResponse>> GetUserExpensesAsync(int userId, DateTime? start = null, DateTime? end = null, int? categoryId = null)
-    {
-        var expenses = await _repository.GetByUserIdAsync(userId, start, end, categoryId);
-        return expenses.Select(e => MapToResponse(e));
-    }
-
-    public async Task<ExpenseResponse?> GetByIdAsync(int id, int userId)
-    {
-        var e = await _repository.GetByIdAsync(id);
-        if (e == null || e.UserId != userId) return null;
-        return MapToResponse(e);
-    }
-
-    public async Task<ExpenseResponse> CreateAsync(int userId, CreateExpenseRequest request)
-    {
-        var expense = new Expense
+        if (request.BudgetLimit.HasValue)
         {
-            UserId = userId,
-            CategoryId = request.CategoryId,
-            Description = request.Description,
-            Value = request.Value,
-            TransactionDate = request.TransactionDate,
-            Observation = request.Observation,
-            IsRecurrent = request.IsRecurrent
-        };
-
-        await _repository.AddAsync(expense);
-        var created = await _repository.GetByIdAsync(expense.Id);
-        return MapToResponse(created!);
-    }
-
-    public async Task UpdateAsync(int id, int userId, UpdateExpenseRequest request)
-    {
-        var expense = await _repository.GetByIdAsync(id);
-        if (expense == null || expense.UserId != userId) throw new Exception("Expense not found");
-
-        expense.CategoryId = request.CategoryId;
-        expense.Description = request.Description;
-        expense.Value = request.Value;
-        expense.TransactionDate = request.TransactionDate;
-        expense.Observation = request.Observation;
-        expense.IsRecurrent = request.IsRecurrent;
-        expense.Status = request.Status;
-
-        await _repository.UpdateAsync(expense);
+            var budget = await _budgetRepository.GetByUserAndCategoryAsync(userId, id, now.Month, now.Year);
+            if (budget != null)
+            {
+                budget.LimitValue = request.BudgetLimit.Value;
+                budget.UpdatedAt = now;
+                await _budgetRepository.UpdateAsync(budget);
+            }
+            else if (request.BudgetLimit.Value > 0)
+            {
+                var newBudget = new Budget
+                {
+                    UserId = userId,
+                    CategoryId = id,
+                    LimitValue = request.BudgetLimit.Value,
+                    PeriodMonth = now.Month,
+                    PeriodYear = now.Year,
+                    CreatedAt = now,
+                    UpdatedAt = now
+                };
+                await _budgetRepository.AddAsync(newBudget);
+            }
+        }
     }
 
     public async Task DeleteAsync(int id, int userId)
     {
-        var expense = await _repository.GetByIdAsync(id);
-        if (expense == null || expense.UserId != userId) return;
+        var category = await _repository.GetByIdAsync(id);
+        if (category == null) throw new Exception("Category not found");
+        
+        // TODO: Adicionar validação adicional se necessário (ex: verificar se há gastos na categoria)
         await _repository.DeleteAsync(id);
-    }
-
-    private static ExpenseResponse MapToResponse(Expense e)
-    {
-        return new ExpenseResponse(
-            e.Id,
-            e.UserId,
-            e.CategoryId,
-            e.Category?.Name ?? "Sem Categoria",
-            e.Description,
-            e.Value,
-            e.TransactionDate,
-            e.Observation,
-            e.IsRecurrent,
-            e.Status,
-            e.CreatedAt,
-            e.UpdatedAt
-        );
     }
 }

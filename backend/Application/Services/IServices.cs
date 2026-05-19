@@ -5,11 +5,11 @@ namespace PIM_III_Backend.Application.Services;
 
 public interface ICategoryService
 {
-    Task<IEnumerable<CategoryResponse>> GetAllAsync();
-    Task<CategoryResponse?> GetByIdAsync(int id);
-    Task<CategoryResponse> CreateAsync(CreateCategoryRequest request);
-    Task UpdateAsync(int id, UpdateCategoryRequest request);
-    Task DeleteAsync(int id);
+    Task<IEnumerable<CategoryResponse>> GetAllAsync(int userId);
+    Task<CategoryResponse?> GetByIdAsync(int id, int userId);
+    Task<CategoryResponse> CreateAsync(CreateCategoryRequest request, int userId);
+    Task UpdateAsync(int id, UpdateCategoryRequest request, int userId);
+    Task DeleteAsync(int id, int userId);
 }
 
 public interface IExpenseService

@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using PIM_III_Backend.Application.Dtos.Categories;
 using PIM_III_Backend.Application.Services;
 using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace PIM_III_Backend.Controllers;
 
@@ -17,16 +18,18 @@ public class CategoriesController : ControllerBase
         _service = service;
     }
 
+    private int GetCurrentUserId() => int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier) ?? "0");
+
     [HttpGet]
     public async Task<ActionResult<IEnumerable<CategoryResponse>>> GetAll()
     {
-        return Ok(await _service.GetAllAsync());
+        return Ok(await _service.GetAllAsync(GetCurrentUserId()));
     }
 
     [HttpGet("{id}")]
     public async Task<ActionResult<CategoryResponse>> GetById(int id)
     {
-        var category = await _service.GetByIdAsync(id);
+        var category = await _service.GetByIdAsync(id, GetCurrentUserId());
         if (category == null) return NotFound();
         return Ok(category);
     }
@@ -34,7 +37,7 @@ public class CategoriesController : ControllerBase
     [HttpPost]
     public async Task<ActionResult<CategoryResponse>> Create(CreateCategoryRequest request)
     {
-        var category = await _service.CreateAsync(request);
+        var category = await _service.CreateAsync(request, GetCurrentUserId());
         return CreatedAtAction(nameof(GetById), new { id = category.Id }, category);
     }
 
@@ -43,7 +46,7 @@ public class CategoriesController : ControllerBase
     {
         try
         {
-            await _service.UpdateAsync(id, request);
+            await _service.UpdateAsync(id, request, GetCurrentUserId());
             return NoContent();
         }
         catch (Exception)
@@ -52,10 +55,11 @@ public class CategoriesController : ControllerBase
         }
     }
 
+    [Authorize]
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {
-        await _service.DeleteAsync(id);
+        await _service.DeleteAsync(id, GetCurrentUserId());
         return NoContent();
     }
 }

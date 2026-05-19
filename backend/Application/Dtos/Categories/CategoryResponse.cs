@@ -6,5 +6,9 @@ public record CategoryResponse(
     string Description,
     string ColorCode,
     string Icon,
-    DateTime CreatedAt
-);
+    DateTime CreatedAt,
+    decimal? BudgetLimit = null
+)
+{
+    public string ColorHex => ColorCode;
+};

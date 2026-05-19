@@ -1,18 +1,21 @@
 namespace PIM_III_Backend.Application.Dtos.Reports;
 
+public record LargestExpenseDto(decimal Amount, string Description);
+
 public record ReportSummaryResponse(
-    decimal TotalIncome, // Opcional por enquanto, vamos focar em TotalExpenses
-    decimal TotalExpenses,
-    decimal Balance,
-    decimal HighestExpenseValue,
-    string HighestExpenseDescription
+    decimal TotalBudget,
+    decimal TotalSpent,
+    decimal RemainingBudget,
+    double OverallPercentage,
+    LargestExpenseDto? LargestExpense
 );
 
 public record CategoryReportResponse(
     int CategoryId,
     string CategoryName,
-    decimal TotalValue,
-    double Percentage
+    decimal TotalSpent,
+    decimal? BudgetLimit,
+    double PercentageUsed
 );
 
 public record TrendReportResponse(

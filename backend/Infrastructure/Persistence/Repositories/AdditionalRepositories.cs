@@ -76,3 +76,37 @@ public class AlertRepository : IAlertRepository
         }
     }
 }
+
+public class IncomeRepository : IIncomeRepository
+{
+    private readonly AppDbContext _context;
+
+    public IncomeRepository(AppDbContext context) => _context = context;
+
+    public async Task<IEnumerable<Income>> GetByUserIdAsync(int userId, DateTime? start = null, DateTime? end = null)
+    {
+        var query = _context.Incomes.Where(x => x.UserId == userId);
+        if (start.HasValue) query = query.Where(x => x.TransactionDate >= start.Value);
+        if (end.HasValue) query = query.Where(x => x.TransactionDate <= end.Value);
+        return await query.OrderByDescending(x => x.TransactionDate).ToListAsync();
+    }
+
+    public async Task<Income?> GetByIdAsync(int id) => await _context.Incomes.FindAsync(id);
+
+    public async Task AddAsync(Income income)
+    {
+        await _context.Incomes.AddAsync(income);
+        await _context.SaveChangesAsync();
+    }
+
+    public async Task DeleteAsync(int id)
+    {
+        var income = await _context.Incomes.FindAsync(id);
+        if (income != null)
+        {
+            _context.Incomes.Remove(income);
+            await _context.SaveChangesAsync();
+        }
+    }
+}
+
