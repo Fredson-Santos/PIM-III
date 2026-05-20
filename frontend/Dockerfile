@@ -9,6 +9,9 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 # Copiar os ativos estáticos para o diretório do servidor web do Nginx
 COPY . /usr/share/nginx/html/
 
+# Corrigir permissões dos arquivos
+RUN chmod -R 755 /usr/share/nginx/html/
+
 # Limpar arquivos desnecessários na imagem de produção
 RUN rm -rf /usr/share/nginx/html/Dockerfile \
            /usr/share/nginx/html/nginx.conf \
