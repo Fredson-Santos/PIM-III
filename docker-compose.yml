@@ -22,7 +22,7 @@ services:
     container_name: conektafinance-frontend
     restart: always
     ports:
-      - "80:80" # Expõe a porta 80 padrão da VPS para acesso público
+      - "8888:80" # Expõe na porta 8888 para compatibilidade com Nginx Proxy Manager
     depends_on:
       - backend
 
