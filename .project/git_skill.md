@@ -38,6 +38,10 @@ Esta skill define o padrão de commits para o projeto PIM III — Sistema de Con
    - Use `!` antes do escopo: `feat(api)!: altera estrutura de resposta`
    - Ou mencione `BREAKING CHANGE:` no body
 
+7. **Git Push**:
+   - **Nunca** realize `git push` automaticamente.
+   - Solicite sempre autorização explícita do usuário antes de enviar as alterações para o repositório remoto.
+
 ---
 
 ## Tipos Comuns
@@ -168,7 +172,8 @@ git commit -m "frontend: adiciona media queries para 375px"
 git add tests/Button.test.js
 git commit -m "test: testes para componente Button"
 
-# 3. Push para GitHub
+# 3. Solicitar autorização para Push
+# "Posso fazer o push para o GitHub?"
 git push origin feat/TASK-010-frontend-responsivo
 
 # 4. Criar Pull Request
@@ -233,7 +238,11 @@ Mas prefira sempre o formato `tipo(escopo): descrição` para maior clareza.
 # 1. Fazer commit
 git commit -m "frontend: TASK-010 - implementa estrutura responsiva"
 
-# 2. Agente executa automaticamente
+# 2. Solicitar autorização e fazer push
+# "Posso enviar as alterações?"
+git push origin <branch>
+
+# 3. Agente executa automaticamente
 /update-tasks
 
 # 3. TASKS.md atualizado
